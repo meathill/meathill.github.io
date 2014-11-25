@@ -2,3 +2,10 @@
 
 # IDE
 .idea
+
+# build
+.sass-cache
+
+#repo
+bower_components/
+node_modules/

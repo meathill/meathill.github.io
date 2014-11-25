@@ -1,0 +1,32 @@
+{
+  "name": "im-meathill",
+  "version": "0.1.0",
+  "homepage": "http://www.meathill.com/",
+  "authors": [
+    "Meathill <meathill@gmail.com>"
+  ],
+  "description": "my profile page",
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "homepage",
+    "profile"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "~3.3.1",
+    "bootstrap-sass": "twbs/bootstrap-sass#~3.3.1"
+    "font-awesome": "~4.2.0",
+    "animate.css": "~3.2.0"
+  },
+}

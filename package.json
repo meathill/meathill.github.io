@@ -1,0 +1,26 @@
+{
+  "name": "im-meathill",
+  "version": "1.0.0",
+  "description": "my profile page",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meathill/meathill.github.io.git"
+  },
+  "keywords": [
+    "homepage",
+    "profile"
+  ],
+  "author": "Meathill <meathill@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/meathill/meathill.github.io/issues"
+  },
+  "homepage": "https://github.com/meathill/meathill.github.io",
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  }
+}
