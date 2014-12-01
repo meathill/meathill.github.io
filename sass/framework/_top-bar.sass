@@ -1,0 +1,25 @@
+@charset "UTF-8"
+
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables"
+@import "../../bower_components/colors/sass/variables"
+
+#top-bar
+  background: none
+  border-bottom: none
+
+  &.active
+    background-color: $navbar-default-bg
+    border-bottom: 1px solid $navbar-default-border
+
+  .navbar-brand
+    color: $white
+
+  .navbar-nav
+    > li
+      > a
+        color: $white
+
+    > .active a
+      background: none
+      border-bottom: 2px solid $white
+      font-weight: bold

@@ -1,0 +1,59 @@
+@charset "UTF-8"
+
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables"
+@import "../../bower_components/colors/sass/variables"
+@import "compass"
+
+#main-slide
+  background-color: $olive
+  height: 100%
+
+  .carousel-inner
+    height: 100%
+
+  .item
+    color: $white
+    height: 100%
+
+    &.left,
+    &.active
+      display: flex
+      justify-content: center
+      align-items: center
+      flex-direction: column
+
+  .slide-1
+    background:
+      image: image-url('1.jpg')
+      repeat: no-repeat
+      position: center center
+      size: cover
+
+    h1
+      font:
+        size: 5em
+        weight: bold
+        family: Helvetica, Arial, "Microsoft Yahei"
+      text-shadow: 0 4px 1px rgba(0, 0, 0, .25)
+
+    .lead
+      font-size: 2.5em
+      color: $white
+
+    p
+      font-size: 1.5em
+
+  .slide-2
+
+    h1
+      font:
+        size: 3.5em
+        weight: 600
+        family: Helvetica, Arial, "Microsoft Yahei"
+      text-shadow: 0 2px 1px rgba(0, 0, 0, .25)
+
+    .lead
+      font-size: 2em
+
+    p
+      font-size: 1.5em

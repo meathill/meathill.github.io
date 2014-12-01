@@ -1,0 +1,64 @@
+@charset "UTF-8"
+
+@import "../../bower_components/colors/sass/variables"
+@import "../define"
+
+#about-me
+  background-color: $navy
+  color: $white
+  padding: $gap-lg
+
+  .intro
+    padding-left: 100px + $gap + $gap-s + $gap-m
+    position: relative
+
+    .gravatar
+      position: absolute
+      border: 5px solid $white
+      top: 0
+      left: $gap-m
+
+    h2
+      border-bottom: 2px solid $white
+      margin: 0 0 $gap
+      padding: 0 0 $gap-s
+      width: 30%
+
+  .weibo
+    color: $black
+    display: block
+    min-height: 80px
+    padding-left: 60px
+    position: relative
+
+    &:before
+      color: $navy
+      font-size: 3em
+      position: absolute
+      top: $gap-s - 4px
+      left: $gap-s
+
+  .resume
+    margin: 0
+
+    li
+      padding: 0
+      margin: 0
+      list-style: none
+
+      + li
+        margin-top: $gap-s
+
+    i
+      background-color: $orange
+      border-radius: 100%
+      color: $white
+      width: 2em
+      height: 2em
+      line-height: 2em
+      text-align: center
+
+    time
+      display: inline-block
+      width: 80px
+      text-align: center

@@ -2,31 +2,31 @@
 <html>
 <head lang="cn">
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="//cdn.staticfile.org/twitter-bootstrap/3.3.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="//cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="//cdn.staticfile.org/animate.css/3.2.0/animate.min.css">
   <link href="./css/print.css" media="print" rel="stylesheet" />
   <link href="./css/screen.css" media="screen, projection" rel="stylesheet" />
   <!--[if IE]>
   <link href="./css/ie.css" media="screen, projection" rel="stylesheet" />
   <![endif]-->
-  <title>你好，我是肉大师。</title>
+  <title>你好，我是Meathill。</title>
 </head>
 <body>
+
+<a name="top"></a>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="top-bar">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-target="#top-bar-inner">
         <i class="fa fa-bars"></i> <span class="sr-only">收放导航</span>
       </button>
-      <a class="navbar-brand" href="#">肉大师</a>
+      <a class="navbar-brand" href="#">Meathill</a>
     </div>
     <div class="collapse navbar-collapse" id="top-bar-inner">
       <ul class="nav navbar-nav navbar-right">
         <li class="active"><a href="#hello">你好 <span class="sr-only">(current)</span></a></li>
-        <li><a href="#intro">自我介绍</a></li>
-        <li><a href="#current">现状</a></li>
-        <li><a href="#profile">简历</a></li>
+        <li><a href="#about-me">自我介绍</a></li>
         <li><a href="#feature">专长</a></li>
         <li><a href="#blog">近期博文</a></li>
         <li><a href="#works">作品集</a></li>
@@ -35,6 +35,7 @@
     </div>
   </div>
 </nav>
+
 <a name="hello"></a>
 <div id="main-slide" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -42,10 +43,20 @@
     <li data-target="#main-slide" data-slide-to="1"></li>
   </ol>
   <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <h1>Hello, world</h1>
+    <div class="item slide-1 active">
+      <h1>你好，我是Meathill</h1>
+      <p class="lead">全站工程师，产品经理</p>
+      <p>有家有口有狗，爱吃爱玩爱旅游</p>
+      <div class="socials">
+
+      </div>
     </div>
-    <div class="item"></div>
+    <div class="item slide-2">
+      <h2>我现在 <strong>Dianjoy</strong> 工作</h2>
+      <p class="lead">欢迎加入我们！</p>
+      <p>我们是全球领先的移动推广平台，目前B轮融资已到位。<br>公司扁平化管理，极度重视技术，实乃不可多得的优秀创业公司。</p>
+      <p><a href="#contact" class="btn btn-primary btn-lg"><i class="fa fa-envelope"></i> 联系我得推荐</a></p>
+    </div>
   </div>
   <a class="left carousel-control" href="#main-slide" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -57,8 +68,63 @@
   </a>
 </div>
 
+<a name="about-me"></a>
+<div id="about-me">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-12 intro">
+        <img src="http://www.gravatar.com/avatar/40c8a761e2e97573a8517135bf0f1e8a?s=100" class="img-circle gravatar">
+        <h2>肉山 宅</h2>
+        <p>创业两年后，我是一名全站工程师。</p>
+        <p>我热爱开发，现在主要投身入Web技术，比如Flash、HTML、PHP、Nodejs等等。同时，作为资深宅男，各种深度用户，我对互联网产品有很多独特的看法。</p>
+        <p>这个网站用来集合我以往的作品和一时兴起建立的项目，大部分都已开源，我也很愿意推广它们。我对未来的设计是，成为一名Freelancer，在东南亚的某个海岛上，SOHO、写书、编程、游泳、遛狗。</p>
+        <p>我的个人生活和开发经验，请移步<a href="http://blog.meathill.com">http://blog.meathill.com/</a>。</p>
+        <div class="well weibo fa fa-weibo">
+          （自动读取我最近的三条微博轮播）
+        </div>
+      </div>
+      <ul class="col-md-4 col-sm-12 resume">
+        <li><time>2012</time> <i class="fa fa-flag"></i> 至今，Dianjoy创业</li>
+        <li><time>2011</time> <i class="fa fa-gamepad"></i> 加入磁聚乐，职业生涯新起点</li>
+        <li><time>2006</time> <i class="fa fa-paper-plane-o"></i> 加入ZOL，从这里起飞</li>
+        <li><time>2002</time> <i class="fa fa-graduation-cap"></i> 中国地质大学（武汉）</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="contact">
+  <div class="container">
+    <div class="row">
+      <h2 class="col-md-2 col-md-offset-2 col-sm-2 col-sm-offset-2 col-xs-12">联系我</h2>
+      <form action="https://getsimpleform.com/messages?form_api_token=25b0054f3aeaf7c4f903ce901a0bb945" method="post" class="col-md-6 col-sm-6 col-xs-12">
+        <div class="form-group ">
+          <label for="contact-email">电子邮件</label>
+          <input type="email" name="email" class="form-control" id="contact-email" required placeholder="yourname@somemail" />
+        </div>
+        <div class="form-group">
+          <label for="contact-message">留言</label>
+          <textarea rows="5" name="message" class="form-control" id="contact-message" required placeholder="您的留言"></textarea>
+        </div>
+        <button class="btn btn-primary btn-block"><i class="fa fa-envelope"></i> 留言</button>
+      </form>
+    </div>
+  </div>
+</div>
+
 <footer id="footer">
-  Copyright @ 2014 肉大师，保留所有权利
+  <div class="container">
+    <div class="socials">
+      <a href="http://weibo.com/meathill"><i class="fa fa-weibo"></i></a>
+      <a href="http://twitter.com/meathill1"><i class="fa fa-twitter"></i></a>
+      <a href="http://plus.google.com/meathill"><i class="fa fa-google-plus"></i></a>
+      <a href="http://cn.linkedin.com/pub/lujia-zhai/32/630/424/"><i class="fa fa-linkedin"></i></a>
+    </div>
+    <p>
+      Copyright @ 2014 Meathill，保留所有权利
+    </p>
+    <a href="#top" class="top-button"><i class="fa fa-chevron-up"></i> TOP</a>
+  </div>
 </footer>
 
 <script src="//cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>

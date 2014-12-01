@@ -1,0 +1,40 @@
+@charset "UTF-8"
+
+@import "../../bower_components/colors/sass/variables"
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables"
+@import "../define"
+
+#footer
+  background-color: $gray
+  line-height: 2.5em
+  text-align: center
+  position: relative
+
+  .socials
+    padding-top: $gap-m
+
+    a
+      border: 2px solid $link-color
+      border-radius: 100%
+      display: inline-block
+      width: 40px
+      height: 40px
+      line-height: 36px
+      font-size: 25px
+      text-align: center
+
+      &:hover
+        border-color: $link-hover-color
+
+      + a
+        margin-left: $gap-s
+
+  p
+    color: $white
+    margin-bottom: 0
+
+  .top-button
+    position: absolute
+    line-height: 1.5em
+    right: 1em
+    bottom: $gap-s
