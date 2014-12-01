@@ -5,6 +5,7 @@
 
 # build
 .sass-cache
+src/css
 
 #repo
 bower_components/
