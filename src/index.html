@@ -41,6 +41,7 @@
   </ol>
   <div class="carousel-inner" role="listbox">
     <div class="item slide-1 active">
+      <img src="http://www.gravatar.com/avatar/40c8a761e2e97573a8517135bf0f1e8a?s=160" class="img-circle img-thumbnail">
       <h1>你好，我是Meathill</h1>
       <p class="lead">全站工程师，产品经理</p>
       <p>有家有口有狗，爱吃爱玩爱旅游</p>
@@ -49,7 +50,7 @@
       </div>
     </div>
     <div class="item slide-2">
-      <h2>我现在 <strong>Dianjoy</strong> 工作</h2>
+      <h2>我在为 <strong>Dianjoy</strong> 工作</h2>
       <p class="lead">欢迎加入我们！</p>
       <p>我们是全球领先的移动推广平台，目前B轮融资已到位。<br>公司扁平化管理，极度重视技术，实乃不可多得的优秀创业公司。</p>
       <p><a href="#contact" class="btn btn-primary btn-lg"><i class="fa fa-envelope"></i> 联系我得推荐</a></p>
@@ -71,13 +72,13 @@
     <div class="row">
       <div class="col-md-8 col-sm-12 intro">
         <img src="http://www.gravatar.com/avatar/40c8a761e2e97573a8517135bf0f1e8a?s=100" class="img-circle gravatar">
-        <h2>肉山 宅</h2>
+        <h2>宅肉山</h2>
         <p>创业两年后，我是一名全站工程师。</p>
         <p>我热爱开发，现在主要投身Web技术，比如Flash、HTML、PHP、Nodejs等等。同时，作为资深宅男，各种深度用户，我对互联网产品有很多独特的看法。</p>
         <p>这个网站用来集合我以往的作品和一时兴起建立的项目，大部分都已开源，我也很愿意推广它们。我对未来的设计是，成为一名Freelancer，在东南亚的某个海岛上，SOHO、写书、编程、游泳、遛狗。</p>
         <p>我的个人生活和开发经验，请移步 <a href="http://blog.meathill.com">http://blog.meathill.com/</a>。</p>
         <div class="well weibo fa fa-weibo">
-          （自动读取我最近的三条微博轮播）
+          （读取最近的三条微博轮播）
         </div>
       </div>
       <div class="col-md-4 col-sm-12">
@@ -222,12 +223,40 @@
 <a name="power"></a>
 <div id="power">
   <div class="page-header">
-    <h2>特长</h2>
+    <h2>专长</h2>
   </div>
   <div class="container">
-
     <div class="row">
-
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <h3>产品思维</h3>
+        <article>
+          <p>前端是距离用户最近的岗位，对我来说，用户体验非常重要。</p>
+          <p>我很擅长在没有独立产品经理的情况下，独立完成工作。当然，我也非常乐意与优秀的产品经理合作。</p>
+        </article>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <h3>工程优化</h3>
+        <article>
+          <p>开发不是码代码，码代码只是必不可少的一部分。</p>
+          <p>我会将各种体系融入开发当中，提高代码结构的强度、扩大适用范围、增强可维护性。</p>
+          <p>只有不懂技术的人，才会觉得程序员是青春饭。</p>
+        </article>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <h3>吸纳新技术</h3>
+        <article>
+          <p>从爆炸的信息中找出于我有益的，摒除掉对我没用的，也是重要的学习能力。</p>
+          <p>我求知欲旺盛，喜欢学习，更喜欢应用到工作当中。</p>
+          <p>如果你也是这样欢迎与我交流心得。</p>
+        </article>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <h3>能干会玩</h3>
+        <article>
+          <p>人身苦短，及时行乐哟~</p>
+          <p>我喜欢打篮球、游泳、旅游、看电影、读小说、玩文明、DND、山口山、品尝美食，等等。</p>
+        </article>
+      </div>
     </div>
   </div>
 </div>
@@ -238,7 +267,9 @@
     <h2>作品推荐</h2>
   </div>
   <div class="container">
+    <div class="row">
 
+    </div>
   </div>
 </div>
 
@@ -248,7 +279,17 @@
     <h2>最近博文</h2>
   </div>
   <div class="container">
-
+    <ul class="blog-grid">
+      <script type="text/x-handlebars-template">
+        <li class="item no-thumbnail">
+          <h3>{{title}}</h3>
+          <article>{{summary}}</article>
+        </li>
+        <li class="item has-thumbnail">
+          <h3>{{title}}</h3>
+        </li>
+      </script>
+    </ul>
   </div>
 </div>
 
