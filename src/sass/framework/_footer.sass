@@ -1,40 +1,44 @@
 @charset "UTF-8"
 
-@import "../../bower_components/colors/sass/variables"
-@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables"
+@import "../../../bower_components/colors/sass/variables"
+@import "../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables"
 @import "../define"
+@import "../colors"
 
 #footer
-  background-color: $gray
+  background-color: $WET_ASPHALT
   line-height: 2.5em
   text-align: center
   position: relative
+  padding: $gap
 
   .socials
-    padding-top: $gap-m
 
     a
-      border: 2px solid $link-color
+      border: 3px solid $PETER_RIVER
+      color: $PETER_RIVER
       border-radius: 100%
       display: inline-block
       width: 40px
       height: 40px
-      line-height: 36px
-      font-size: 25px
+      line-height: 34px
+      font-size: 20px
       text-align: center
 
       &:hover
-        border-color: $link-hover-color
+        border-color: darken($PETER_RIVER, 10%)
+        color: darken($PETER_RIVER, 10%)
 
       + a
         margin-left: $gap-s
 
   p
     color: $white
-    margin-bottom: 0
+    margin: 1em 0 0
 
   .top-button
+    color: $PETER_RIVER
     position: absolute
     line-height: 1.5em
-    right: 1em
-    bottom: $gap-s
+    right: 2em
+    bottom: $gap
