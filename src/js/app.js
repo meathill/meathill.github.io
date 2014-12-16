@@ -4,6 +4,12 @@
 'use strict';
 $(function () {
 
+  // topbar
+  var topbar = $('#top-bar');
+  $(window).on('scroll', function () {
+    topbar.toggleClass('active', document.body.scrollTop > 0);
+  });
+
   // weibo
 
   // blog

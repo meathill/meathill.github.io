@@ -7,6 +7,9 @@
 .sass-cache
 src/css
 
-#repo
+# repo
 bower_components/
 node_modules/
+
+# assets
+assets/

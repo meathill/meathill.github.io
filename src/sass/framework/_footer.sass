@@ -10,7 +10,7 @@
   line-height: 2.5em
   text-align: center
   position: relative
-  padding: $gap
+  padding: $gap 0
 
   .socials
 
@@ -35,6 +35,13 @@
   p
     color: $white
     margin: 1em 0 0
+
+    a
+      color: $white
+
+      &:hover
+        color: darken($white, 10%)
+        text-decoration: underline
 
   .top-button
     color: $PETER_RIVER

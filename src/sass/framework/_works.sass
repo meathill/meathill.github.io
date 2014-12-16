@@ -1,8 +1,85 @@
 @charset "UTF-8"
 
+@import "../../../bower_components/colors/sass/variables"
 @import "../colors"
 @import "../define"
 
 #works
   background-color: $SUN_FLOWER
-  padding: $gap 0
+  padding: $gap-lg 0
+
+  article
+    color: $white
+
+    a
+      color: $red
+
+      &:hover
+        text-decoration: underline
+
+  .carousel-control
+    background: none
+
+  .carousel-indicators
+    top: -58px
+    bottom: auto
+    width: 30%
+    margin-left: -15%
+    text-align: right
+
+  .item
+    min-height: 586px
+
+    img
+      max-width: 100%
+      height: auto
+
+  .gamepop,
+  .xline
+    &.active,
+    &.left,
+    &.right
+      display: flex
+
+    article
+      flex: 1
+
+    h2
+      text-align: center
+
+    ul
+      font-size: 1.5em
+      line-height: 2em
+
+  .xline
+    article
+      padding-left: $gap-lg
+
+    h2
+      margin-top: 0
+
+  .findx
+    header
+      text-align: center
+
+    article
+      width: 50%
+      margin: 0 auto
+      padding-top: $gap
+
+    h2
+      margin-top: 0
+
+      small
+        color: $white
+        font-size: 0.5em
+
+    p:last-child
+      margin-bottom: 0
+
+  .labels
+    text-align: center
+
+    .label
+      background-color: $CARROT
+      font-weight: normal
