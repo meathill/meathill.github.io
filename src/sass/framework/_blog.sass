@@ -1,36 +1,41 @@
 @charset "UTF-8"
 
+@import "../../../bower_components/colors/sass/variables"
 @import "../colors"
 @import "../define"
 
 #blog
   background-color: $CARROT
-  padding: $gap 0
+  padding: $gap-lg 0
 
-  .blog-grid
-    display: flex
-    flex-wrap: wrap
-    margin: 0 0 0 (-$gap-xs)
-    padding: 0
+  #blog-grid
+    color: darken($CARROT, 25%)
 
     li
-      flex: 1
-      background-color: $CLOUDS
-      display: block
+      background-color: lighten($CARROT, 10%)
+      border-right: 2px solid $CARROT
       list-style: none
-      margin: 0 0 $gap-xs $gap-xs
-      padding: $gap-s
-      width: 25%
-      min-height: 150px
+      min-height: 200px
+
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3)
+        border-bottom: 2px solid $CARROT
+
+      &:nth-child(3n)
+        border-right: none
 
       h3
-        margin: 0
+        border-bottom: 1px solid darken($CARROT, 10%)
+        margin: 0 0 $gap-s
+        padding-bottom: $gap-s
 
       &.has-thumbnail
         position: relative
 
         h3
           background-color: rgba(0, 0, 0, .6)
+          color: $white
           line-height: 1.5em
           text-indent: 0.5em
           position: absolute
