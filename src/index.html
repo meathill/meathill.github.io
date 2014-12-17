@@ -293,6 +293,7 @@
       <div class="carousel-inner" role="listbox">
         <div class="item active gamepop">
           <img src="http://i0.wp.com/blog.meathill.com/wp-content/uploads/2014/12/gamepop1.png">
+          <img src="http://i0.wp.com/blog.meathill.com/wp-content/uploads/2014/12/gamepop2.png" class="right">
           <article>
             <h2>游戏百科</h2>
             <p class="labels">
@@ -309,7 +310,6 @@
               <li><a href="https://github.com/Dianjoy/gamepop" target="_blank">Github</a> | <a href="http://m.yxpopo.com/" target="_blank">Demo</a></li>
             </ul>
           </article>
-          <img src="http://i0.wp.com/blog.meathill.com/wp-content/uploads/2014/12/gamepop2.png">
         </div>
         <div class="item xline">
           <img src="http://i0.wp.com/blog.meathill.com/wp-content/uploads/2014/12/xline.png">
@@ -332,7 +332,7 @@
         <div class="item findx">
           <header><img src="http://i0.wp.com/blog.meathill.com/wp-content/uploads/2014/12/findx.png"></header>
           <article>
-            <p class="labels pull-right">
+            <p class="labels">
               <span class="label">专题</span>
               <span class="label">活动</span>
               <span class="label">动画效果</span>
@@ -368,12 +368,12 @@
       <template id="blog-template">
         {{#each list}}
         {{#if thumbnail}}
-        <li class="item has-thumbnail col-md-4 col-sm-6 col-xs-12" data-src="{{link}}">
-          <h3>{{title}}</h3>
+        <li class="item has-thumbnail col-md-4 col-sm-6 col-xs-12">
+          <h3><a href="{{link}}">{{title}}</a></h3>
         </li>
         {{else}}
         <li class="item no-thumbnail col-md-4 col-sm-6 col-xs-12">
-          <h3>{{title}}</h3>
+          <h3><a href="{{link}}">{{title}}</a></h3>
           <article>{{{description}}}</article>
         </li>
         {{/if}}
@@ -391,11 +391,11 @@
     <div class="row">
       <form action="https://getsimpleform.com/messages?form_api_token=25b0054f3aeaf7c4f903ce901a0bb945" method="post" class="col-md-6 col-sm-8 col-xs-12 col-md-offset-3 col-sm-offset-2">
         <div class="form-group ">
-          <label for="contact-email">电子邮件</label>
+          <label for="contact-email" class="hidden-xs">电子邮件</label>
           <input type="email" name="email" class="form-control" id="contact-email" required placeholder="yourname@somemail" />
         </div>
         <div class="form-group">
-          <label for="contact-message">留言</label>
+          <label for="contact-message" class="hidden-xs">留言</label>
           <textarea rows="5" name="message" class="form-control" id="contact-message" required placeholder="您的留言"></textarea>
         </div>
         <button class="btn btn-warning btn-block"><i class="fa fa-envelope"></i> 留言</button>
@@ -414,6 +414,7 @@
     </div>
     <p>
       Copyright @ 2014 Meathill，保留所有权利
+      &nbsp;|&nbsp; 当前版本：{{version}}
       &nbsp;|&nbsp; <a href="https://github.com/meathill/meathill.github.io" target="_blank">源代码</a>
     </p>
     <a href="#top" class="top-button"><i class="fa fa-chevron-up"></i> TOP</a>

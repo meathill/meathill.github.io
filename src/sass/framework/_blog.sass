@@ -10,6 +10,13 @@
 
   #blog-grid
     color: darken($CARROT, 25%)
+    padding: 0 20px
+
+    a
+      color: darken($CARROT, 25%)
+
+      &:hover
+        color: darken($CARROT, 32%)
 
     li
       background-color: lighten($CARROT, 10%)
@@ -48,3 +55,11 @@
         flex-direction: column
         justify-content: center
         align-items: center
+
+@media (max-width: 360px)
+  #blog #blog-grid
+    li
+      border: none
+
+      + li
+        margin-top: $gap-xs

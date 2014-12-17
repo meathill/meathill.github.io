@@ -51,6 +51,13 @@
       font-size: 1.5em
       line-height: 2em
 
+  .gamepop
+    .right
+      order: 3
+
+    article
+      order: 2
+
   .xline
     article
       padding-left: $gap-lg
@@ -74,6 +81,9 @@
         color: $white
         font-size: 0.5em
 
+    .labels
+      float: right
+
     p:last-child
       margin-bottom: 0
 
@@ -83,3 +93,50 @@
     .label
       background-color: $CARROT
       font-weight: normal
+
+@media (max-width: 360px)
+  #works
+    .gamepop,
+    .xline
+      &.active,
+      &.left,
+      &.right
+        display: block
+
+      ul
+        font-size: 1em
+
+    .gamepop
+
+      img
+        width: 49%
+        display: inline-block
+
+      article
+        width: 100%
+
+      h2
+        margin-top: 0
+
+    .xline
+      article
+        padding-left: 0
+
+      h2
+        margin-top: $gap
+
+    .findx
+      width: 100%
+
+      article
+        padding: $gap $gap 0
+        width: auto
+
+      h2
+        text-align: center
+        
+      .labels
+        float: none
+
+    .carousel-indicators
+      margin-left: 18%

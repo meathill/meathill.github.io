@@ -74,7 +74,7 @@
       this.$el.html(this.template({list: list}));
     },
     onError: function (xhr, status, error) {
-      this.render({isError: true});
+      console.log('read feed error: ', error);
     },
     onSuccess: function (data, status, xhr) {
       var list = this.parse(data)
