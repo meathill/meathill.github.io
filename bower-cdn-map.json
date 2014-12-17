@@ -1,5 +1,5 @@
 {
-  "bootstrap": "//cdn.staticfile.org/twitter-bootstrap/3.3.0/{{ext}}/bootstrap.min.{{ext}}",
+  "bootstrap": "//cdn.staticfile.org/twitter-bootstrap/3.3.0/{ext}/bootstrap.min.{ext}",
   "font-awesome": "//cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css",
   "jquery": "//cdn.staticfile.org/jquery/2.1.1/jquery.min.js",
   "handlebars": "//cdn.staticfile.org/handlebars.js/2.0.0/handlebars.runtime.min.js",

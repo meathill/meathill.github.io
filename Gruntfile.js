@@ -4,54 +4,69 @@
 
 module.exports = function (grunt) {
   var BUILD =  './'
+    , SOURCE = 'src/'
     , TEMP = 'temp/'
     , target = 'index.html'
-    , JS_REG = /<script src="(js/.+?\.js)"><\/script>/g
+    , JS_REG = /<script src="(js\/.+?\.js)"><\/script>/g
     , TEMPLATE_REG = /<template id="([\w\-]+)">([\S\s]+?)<\/template>/g
-    , CDN_REG = /(../)+bower_components/.*/([\w\-]+)(.min)?.(js|css)/g
-    , libs = []
+    , CDN_REG = /(..\/)+bower_components\/.*\/([\w\-]+)(.min)?.(js|css)/g
     , jses = [];
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     clean: {
-      start: [BUILD],
+      start: ['js/', 'css/', 'img/', 'index.html'],
       end: [TEMP]
     },
     index: {
-      index: 'index.html'
-    },
-    copy: { // 复制
-      svg: {
-        files: [{
-          expand: true,
-          cwd: 'img/',
-          src: ['*.svg'],
-          dest: BUILD + 'img/'
-        }]
-      }
+      index: SOURCE + 'index.html'
     },
     compass: { // 将sass文件编译compass成css
       css: {
         options: {
+          basePath: SOURCE,
           environment: 'production',
-          outputStyle: 'compressed'
+          outputStyle: 'compressed',
+          relativeAssets: true
         },
         files: [{
           expand: true,
           cwd: 'sass/',
           src: ['*.sass'],
-          dest: BUILD + 'css/', // 压缩最终目录
+          dest: 'css/', // 压缩最终目录
           ext: '.css' // 更改后缀名
         }]
       }
 
     },
+    copy: { // 复制
+      svg: {
+        files: [{
+          expand: true,
+          cwd: SOURCE + 'img/',
+          src: ['*.svg'],
+          dest: BUILD + 'img/'
+        }]
+      },
+      css: {
+        options: { // 过滤掉source map
+          process: function (content) {
+            return content.replace(/\/\*[\s\S]*\*\//g, '');
+          }
+        },
+        files: [{
+          expand:true,
+          cwd: SOURCE + 'css/',
+          src: ['*.css'],
+          dest: 'css/'
+        }]
+      }
+    },
     imagemin: { // 图片压缩模块
       img: {
         files: [{
           expand: true,
-          cwd: 'img/',
+          cwd: SOURCE + 'img/',
           src: ['*.{png,jpg,gif}'],
           dest: BUILD + 'img/'
         }]
@@ -61,7 +76,7 @@ module.exports = function (grunt) {
       compile: {
         options: {
           partialsUseNamespace: true,
-          namespace: 'TEMPLATES',
+          namespace: 'TEMPLATE',
           compilerOptions:{
             knownHelpers: {
               'if': true,
@@ -76,13 +91,13 @@ module.exports = function (grunt) {
           }
         },
         files: {
-          'js/templates.js': [TEMP + 'handlebars/*.hbs']
+          'temp/templates.js': [TEMP + 'handlebars/*.hbs']
         }
       }
     },
     uglify: { // 压缩以及合并javascript文件  压缩代码，用于减少文件体积
       options: {
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
+        banner: '/*! <%= pkg.name %> v<%= pkg.version %>(<%= grunt.template.today("yyyy-mm-dd") %>) */\n',
         compress: {
           global_defs: {
             'DEBUG': false
@@ -96,7 +111,7 @@ module.exports = function (grunt) {
       web: {
         files: [{
           src: jses,
-          dest: BUILD + 'css/index.js'
+          dest: BUILD + 'js/app.js'
         }]
       }
     },
@@ -132,11 +147,11 @@ module.exports = function (grunt) {
       if (src.indexOf('define.js') !== -1) {
         return '';
       }
-      jses.push(src);
-      return /index\.js/.test(src) ? match : '';
+      jses.push(SOURCE + src);
+      return /app\.js/.test(src) ? match : '';
     });
+    jses.unshift('temp/templates.js'); // 预编译的模板
 
-    jses.unshift('js/templates.js'); // 预编译的模板
     // 取模板
     html = html.replace(TEMPLATE_REG, function (match, id, content) {
       content = content.replace(/\s{2,}|\n|\r/g, '');
@@ -147,23 +162,23 @@ module.exports = function (grunt) {
     // 使用CDN替换bower
     html = html.replace(CDN_REG, function (match, pre, name, min, ext) {
       if (name === 'bootstrap') { // 需要区分js和css
-        return map[name].replace('{{ext}}', ext);
+        return map[name].replace(/\{ext\}/g, ext);
       }
       return map[name];
     });
 
     // 生成版本号
-    html = html.replace('{{version}}', grunt.config.get('pkg').versiong);
+    html = html.replace('{{version}}', grunt.config.get('pkg').version);
 
     // 将过滤完的html写入TEMP
-    grunt.file.write(TEMP + this.data, html);
+    grunt.file.write(TEMP + 'index.html', html);
   });
 
   grunt.registerTask('default', [
     'clean:start',
     'index',
-    'copy',
     'compass',
+    'copy',
     'imagemin',
     'handlebars',
     'uglify',
