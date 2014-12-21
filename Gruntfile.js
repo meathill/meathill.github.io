@@ -2,6 +2,10 @@
  * Created by meathill on 14-1-24.
  */
 
+var htmlparser = require('htmlparser')
+  , handlebars = require('handlebars')
+  , fs = require('fs');
+
 module.exports = function (grunt) {
   var BUILD =  './'
     , SOURCE = 'src/'
@@ -10,7 +14,8 @@ module.exports = function (grunt) {
     , JS_REG = /<script src="(js\/.+?\.js)"><\/script>/g
     , TEMPLATE_REG = /<template id="([\w\-]+)">([\S\s]+?)<\/template>/g
     , CDN_REG = /(..\/)+bower_components\/.*\/([\w\-]+)(.min)?.(js|css)/g
-    , jses = [];
+    , jses = []
+    , feed = null;
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -153,10 +158,13 @@ module.exports = function (grunt) {
     jses.unshift('temp/templates.js'); // 预编译的模板
 
     // 取模板
+    // 目前只有“最新博文”一处模板，所以这里把它替换成实际文字
     html = html.replace(TEMPLATE_REG, function (match, id, content) {
       content = content.replace(/\s{2,}|\n|\r/g, '');
+      var template = handlebars.compile(content)
+        , html = template({list: feed});
       grunt.file.write(TEMP + 'handlebars/' + id + '.hbs', content);
-      return '';
+      return html;
     });
 
     // 使用CDN替换bower
@@ -173,13 +181,27 @@ module.exports = function (grunt) {
     // 将过滤完的html写入TEMP
     grunt.file.write(TEMP + 'index.html', html);
   });
+  grunt.registerTask('feed', 'get feed data', function () {
+    var xml = grunt.file.read('feed.xml')
+      , handler = new htmlparser.RssHandler(function (error, dom) {
+        if (error) {
+          grunt.log.error('[Feed] Parse xml error.');
+        } else {
+          feed = dom.items.slice(0, 6);
+          grunt.log.write('[Feed] Feed data get! ' + feed.length + ' items.');
+        }
+      })
+      , parser = new htmlparser.Parser(handler);
+    parser.parseComplete(xml);
+  });
 
   grunt.registerTask('default', [
     'clean:start',
+    'feed',
     'index',
     'compass',
     'copy',
-    'imagemin',
+    //'imagemin',
     'handlebars',
     'uglify',
     'htmlmin',

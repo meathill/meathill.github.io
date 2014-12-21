@@ -12,10 +12,22 @@ $(function (ns) {
   // topbar
   var topbar = $('#top-bar');
   $(window).on('scroll', function () {
-    topbar.toggleClass('active', document.body.scrollTop > 0);
+    var offset = document.body.scrollTop;
+    topbar.toggleClass('active', offset > 0);
+    for (var i = points.length - 1; i > -1; i--) {
+      if (points[i] - offset < 73 && points[i] - offset > -33) { // top-bar高度是53，给20px适配
+        topbar.find('li').eq(i).addClass('active')
+          .siblings().removeClass('active');
+        break;
+      }
+    }
   });
 
-  // weibo
+  // way points
+  var points = [];
+  $('a[name]').each(function () {
+    points.push($(this).offset().top);
+  });
 
   // blog
   var blog = new ns.Blog({

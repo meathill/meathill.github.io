@@ -12,12 +12,6 @@
     color: darken($CARROT, 25%)
     padding: 0 20px
 
-    a
-      color: darken($CARROT, 25%)
-
-      &:hover
-        color: darken($CARROT, 32%)
-
     li
       background-color: lighten($CARROT, 10%)
       border-right: 2px solid $CARROT
@@ -38,23 +32,43 @@
         padding-bottom: $gap-s
 
       &.has-thumbnail
+        background:
+          position: center center
+          repeat: no-repeat
+          size: cover
         position: relative
 
         h3
           background-color: rgba(0, 0, 0, .6)
           color: $white
           line-height: 1.5em
-          text-indent: 0.5em
           position: absolute
           left: 0
           right: 0
           bottom: 0
+          margin-bottom: 0
+          padding-bottom: 0
+          text-align: center
+
+        a
+          color: $white
+
+          &:hover
+            color: $silver
 
       &.no-thumbnail
         display: flex
         flex-direction: column
         justify-content: center
         align-items: center
+
+        a
+          color: darken($CARROT, 25%)
+
+          &:hover
+            background-color: rgba(0, 0, 0, 0.1)
+            color: darken($CARROT, 32%)
+            text-decoration: none
 
 @media (max-width: 375px)
   #blog #blog-grid

@@ -20,7 +20,6 @@
 </head>
 <body>
 
-<a name="top"></a>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="top-bar">
   <div class="container">
     <div class="navbar-header">
@@ -87,8 +86,8 @@
         <p>爱开发，现在主要投身Web技术，比如Flash、HTML、PHP、Nodejs等。同时，身为资深宅男，各种深度用户，我对互联网产品也有很多独特的看法。</p>
         <p>这个网站用来集合我以往的作品和一时兴起建立的项目，大部分都已开源，我也很愿意分享它们。我对未来的设计是，成为一名Freelancer，在东南亚的某个海岛上，SOHO、写书、编程、游泳、遛狗。</p>
         <p>我的个人生活和开发经验，请移步 <a href="http://blog.meathill.com">http://blog.meathill.com/</a>。</p>
-        <div class="well weibo fa fa-weibo">
-          （读取最近的三条微博轮播）
+        <div class="weibo">
+          <a href="http://weibo.com/meathill" target="_blank"><img border="0" src="http://service.t.sina.com.cn/widget/qmd/1401537047/a4b56a6a/1.png"/></a>
         </div>
       </div>
       <div class="col-md-4 col-sm-12">
@@ -292,8 +291,8 @@
 
       <div class="carousel-inner" role="listbox">
         <div class="item active gamepop">
-          <img src="http://i0.wp.com/blog.meathill.com/wp-content/uploads/2014/12/gamepop1.png">
-          <img src="http://i0.wp.com/blog.meathill.com/wp-content/uploads/2014/12/gamepop2.png" class="right">
+          <img src="http://7sbrxr.com1.z0.glb.clouddn.com/gamepop1.png">
+          <img src="http://7sbrxr.com1.z0.glb.clouddn.com/gamepop2.png" class="right">
           <article>
             <h2>游戏百科</h2>
             <p class="labels">
@@ -307,12 +306,12 @@
               <li>80%核心代码通用，20%各平台适配</li>
               <li>踩过无数的坑，终于到达不怎么理想的彼岸……</li>
               <li>由于各种原因，该项目被暂时搁置……</li>
-              <li><a href="https://github.com/Dianjoy/gamepop" target="_blank">Github</a> | <a href="http://m.yxpopo.com/" target="_blank">Demo</a></li>
+              <li><a href="https://github.com/Dianjoy/gamepop" class="external" target="_blank">Github</a> | <a href="http://m.yxpopo.com/" target="_blank" class="external">Demo</a></li>
             </ul>
           </article>
         </div>
         <div class="item xline">
-          <img src="http://i0.wp.com/blog.meathill.com/wp-content/uploads/2014/12/xline.png">
+          <img src="http://7sbrxr.com1.z0.glb.clouddn.com/xline.png">
           <article>
             <h2>XLINE.COM球衣定制</h2>
             <p class="labels">
@@ -325,12 +324,12 @@
               <li>使用支付宝作为支付平台</li>
               <li>用户可以自由定制产品</li>
               <li>拥有完善的电子商务功能功能，具备很强的可扩展性</li>
-              <li><a href="http://www.xline.com.cn/" target="_blank">访问网站</a></li>
+              <li><a href="http://www.xline.com.cn/" target="_blank" class="external">访问网站</a></li>
             </ul>
           </article>
         </div>
         <div class="item findx">
-          <header><img src="http://i0.wp.com/blog.meathill.com/wp-content/uploads/2014/12/findx.png"></header>
+          <header><img src="http://7sbrxr.com1.z0.glb.clouddn.com/findx.png"></header>
           <article>
             <p class="labels">
               <span class="label">专题</span>
@@ -341,7 +340,7 @@
             <p>专题本身不复杂，一个JS就把所有逻辑写完了。</p>
             <p>值得一提的是使用了很多CSS3动画，并采用PreloadJS进行加载，用户体验提升了不少。</p>
             <p>这次基本兼容各浏览器，不过在破浏览器上看不到效果。</p>
-            <p><a href="https://github.com/meathill-freelance/copycat" target="_blank">Github</a> | <a href="http://demo.meathill.com/copycat" target="_blank">Demo</a></p>
+            <p><a href="https://github.com/meathill-freelance/copycat" target="_blank" class="external">Github</a> | <a href="http://demo.meathill.com/copycat" target="_blank" class="external">Demo</a></p>
           </article>
         </div>
       </div>
@@ -368,7 +367,7 @@
       <template id="blog-template">
         {{#each list}}
         {{#if thumbnail}}
-        <li class="item has-thumbnail col-md-4 col-sm-6 col-xs-12">
+        <li class="item has-thumbnail col-md-4 col-sm-6 col-xs-12" style="background-image: url({{thumbnail}})">
           <h3><a href="{{link}}">{{title}}</a></h3>
         </li>
         {{else}}
@@ -417,7 +416,7 @@
       &nbsp;|&nbsp; 当前版本：{{version}}
       &nbsp;|&nbsp; <a href="https://github.com/meathill/meathill.github.io" target="_blank">源代码</a>
     </p>
-    <a href="#top" class="top-button"><i class="fa fa-chevron-up"></i> TOP</a>
+    <a href="#hello" class="top-button"><i class="fa fa-chevron-up"></i> TOP</a>
   </div>
 </footer>
 
