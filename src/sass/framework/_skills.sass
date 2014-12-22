@@ -6,7 +6,7 @@
 
 #skills
   background-color: darken($BELIZE_HOLE, 5%)
-  padding: $gap-lg 0
+  padding: $gap-lg 0 $gap-lg - $gap
 
   .item
     color: $white
@@ -37,3 +37,7 @@
     .fa-star-o
       color: $gray
       font-weight: lighter
+
+@media (max-width: 432px)
+  #skills
+    padding-bottom: 0

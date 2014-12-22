@@ -4,12 +4,10 @@
 @import "../../../bower_components/colors/sass/variables"
 
 #top-bar
-  background: none
-  border-bottom: none
   transition: 0.3s all
 
   &.active
-    background-color: rgba(34, 34, 34, .9)
+    background-color: rgba(0, 0, 0, .9)
     border-bottom: 1px solid $navbar-inverse-border
     box-shadow: 0 2px 1px rgba(0, 0, 0, .25)
 
@@ -27,7 +25,12 @@
     color: $white
 
   .navbar-toggle
+    background-color: $gray
+    border: 1px solid $white
     line-height: 1em
+
+    &.collapsed
+      background: none
 
   .navbar-nav
     > li
@@ -53,3 +56,22 @@
       background: none
       border-bottom: 2px solid $white
       font-weight: bold
+
+  .navbar-collapse.in,
+  .collapsing
+    background-color: rgba(0, 0, 0, .9)
+
+@media (max-width: 432px)
+  .navbar-nav
+    margin-top: 0
+    margin-bottom: 0
+
+  .navbar-collapse
+    border-top: none
+
+  #top-bar
+    .active
+      background-color: lighten($navbar-inverse-bg, 15%)
+
+    .navbar-nav > .active a
+      border-bottom: none

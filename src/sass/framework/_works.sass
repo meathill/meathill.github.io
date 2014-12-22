@@ -94,10 +94,20 @@
       background-color: $CARROT
       font-weight: normal
 
-@media (max-width: 375px)
+@media (max-width: 432px)
   #works
     .item
       min-height: inherit
+
+      img
+        display: block
+        margin: 0 auto
+
+      article
+        margin-top: $gap
+
+      h2
+        margin-top: 0
 
     .gamepop,
     .xline
@@ -110,23 +120,22 @@
         font-size: 1em
 
     .gamepop
-
-      img
-        width: 49%
+      .img
         display: inline-block
+        width: 44%
+        margin-left: 5%
+        vertical-align: top
+
+        &.right
+          margin-left: 0
+          margin-right: 5%
 
       article
         width: 100%
 
-      h2
-        margin-top: 0
-
     .xline
       article
         padding-left: 0
-
-      h2
-        margin-top: $gap
 
     .findx
       width: 100%
@@ -143,3 +152,28 @@
 
     .carousel-indicators
       margin-left: 18%
+
+@media (max-width: 320px)
+  #works .item article
+    height: 300px
+
+@media (max-width: 360px) and (min-width: 321px)
+  #works .item article
+    height: 270px
+
+@media (max-width: 375px)
+  #works
+    .item
+      img
+        max-height: 200px
+
+      &.findx header
+        height: 200px
+
+@media (max-width: 432px) and (min-width: 361px)
+  #works .item
+    img
+      height: 250px
+
+    article
+      height: 240px

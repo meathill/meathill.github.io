@@ -3,6 +3,7 @@
 @import "../../../bower_components/colors/sass/variables"
 @import "../colors"
 @import "../define"
+@import "compass/css3/flexbox"
 
 #blog
   background-color: $CARROT
@@ -10,6 +11,7 @@
 
   #blog-grid
     color: darken($CARROT, 25%)
+    margin-bottom: 0
     padding: 0 20px
 
     li
@@ -57,10 +59,10 @@
             color: $silver
 
       &.no-thumbnail
-        display: flex
-        flex-direction: column
-        justify-content: center
-        align-items: center
+        @include display-flex()
+        @include flex-direction(column)
+        @include justify-content(center)
+        @include align-items(center)
 
         a
           color: darken($CARROT, 25%)
@@ -70,10 +72,24 @@
             color: darken($CARROT, 32%)
             text-decoration: none
 
-@media (max-width: 375px)
-  #blog #blog-grid
-    li
-      border: none
+  .btn
+    display: block
+    margin: $gap auto 0
+    width: 30%
 
-      + li
-        margin-top: $gap-xs
+@media (max-width: 432px)
+  #blog
+    padding-bottom: $gap
+
+    #blog-grid
+      li
+        border: none
+
+        + li
+          margin-top: $gap-xs
+
+    .blog-link
+      padding: 0 $gap-xs
+
+    .btn
+      width: 100%

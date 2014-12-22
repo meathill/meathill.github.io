@@ -31,6 +31,9 @@
   .weibo
     margin-top: $gap
 
+    img
+      max-width: 100%
+
   .resume
     border-left: 3px solid $white
     margin: 0 0 0 100px
@@ -77,7 +80,7 @@
       margin-top: $gap
       padding: 6px $gap
 
-@media (max-width: 375px)
+@media (max-width: 432px)
   #about-me
     padding: $gap 0
 
@@ -92,6 +95,7 @@
         position: static
 
     .resume
+      margin-top: $gap
       margin-left: 50%
 
       & + .btn
