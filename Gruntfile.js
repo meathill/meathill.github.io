@@ -14,8 +14,10 @@ module.exports = function (grunt) {
     , JS_REG = /<script src="(js\/.+?\.js)"><\/script>/g
     , TEMPLATE_REG = /<template id="([\w\-]+)">([\S\s]+?)<\/template>/g
     , CDN_REG = /(..\/)+bower_components\/.*\/([\w\-]+)(.min)?.(js|css)/g
+    , CDATA_REG = /\!\[cdata\[([\S\s]+)\]\]/gi
     , jses = []
-    , feed = null;
+    , feed = null
+    , latest = 0;
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -177,6 +179,8 @@ module.exports = function (grunt) {
 
     // 生成版本号
     html = html.replace('{{version}}', grunt.config.get('pkg').version);
+    // 记录最新博文的id
+    html = html.replace('{{latest}}', latest);
 
     // 将过滤完的html写入TEMP
     grunt.file.write(TEMP + 'index.html', html);
@@ -188,7 +192,11 @@ module.exports = function (grunt) {
           grunt.log.error('[Feed] Parse xml error.');
         } else {
           feed = dom.items.slice(0, 6);
-          grunt.log.write('[Feed] Feed data get! ' + feed.length + ' items.');
+          latest = parseInt(feed[0].id.match(/\/\?p=(\d+)$/)[1]);
+          for (var i = 0, len = feed.length; i < len; i++) {
+            feed[i].description = feed[i].description ? feed[i].description.replace(CDATA_REG, '$1') : '';
+          }
+          grunt.log.write('[Feed] Feed data get: ' + feed.length + ' items, last id is: ' + latest + '.');
         }
       })
       , parser = new htmlparser.Parser(handler);
@@ -201,7 +209,7 @@ module.exports = function (grunt) {
     'index',
     'compass',
     'copy',
-    //'imagemin',
+    'imagemin',
     'handlebars',
     'uglify',
     'htmlmin',
