@@ -24,13 +24,13 @@
     "tests"
   ],
   "devDependencies": {
-    "bootstrap": "~3.3.1",
-    "bootstrap-sass": "twbs/bootstrap-sass#~3.3.1",
-    "font-awesome": "~4.2.0",
-    "animate.css": "~3.2.0",
-    "colors": "~2.0.0"
+    "bootstrap": "~3.3.4",
+    "bootstrap-sass": "twbs/bootstrap-sass#~3.3.4",
+    "font-awesome": "~4.3.0",
+    "animate.css": "~3.3.0",
+    "colors": "~2.2.0"
   },
   "dependencies": {
-    "handlebars": "~2.0.0"
+    "handlebars": "~3.0.3"
   }
 }
