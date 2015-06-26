@@ -24,8 +24,8 @@
     "tests"
   ],
   "devDependencies": {
-    "bootstrap": "~3.3.4",
-    "bootstrap-sass": "twbs/bootstrap-sass#~3.3.4",
+    "bootstrap": "~3.3.5",
+    "bootstrap-sass": "twbs/bootstrap-sass#~3.3.5",
     "font-awesome": "~4.3.0",
     "animate.css": "~3.3.0",
     "colors": "~2.2.0"
