@@ -43,7 +43,7 @@
         var item = {}
           , element = this.firstElementChild;
         while (element) {
-          var attr = element.namespaceURI ? element.tagName.match(tagReg)[1] : element.tagName;
+          var attr = element.namespaceURI && element.tagName.match(tagReg) > 1 ? element.tagName.match(tagReg)[1] : element.tagName;
           item[attr] = element.textContent.replace(/<a.*>.*?<\/a>/, '');
           element = element.nextElementSibling;
         }

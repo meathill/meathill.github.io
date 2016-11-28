@@ -27,6 +27,25 @@
       @include align-items(center)
       @include flex-direction(column)
 
+  .socials
+    padding-top: $gap
+
+    a
+      border: 2px solid currentColor
+      border-radius: 50%
+      color: $white
+      display: inline-block
+      font-size: 1.5em
+      line-height: 36px
+      text-align: center
+      width: 40px
+
+      + a
+        margin-left: $gap-s
+
+      &:hover
+        color: $yellow
+
   .slide-1
     background-image: url(http://7sbrxr.com1.z0.glb.clouddn.com/slide1.jpg)
 

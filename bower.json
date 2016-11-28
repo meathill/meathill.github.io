@@ -24,12 +24,12 @@
     "tests"
   ],
   "devDependencies": {
-    "bootstrap": "^3.3.6",
-    "font-awesome": "^4.5.0",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
     "animate.css": "^3.5.1"
   },
   "dependencies": {
-    "bootstrap-sass": "^3.3.6",
+    "bootstrap-sass": "^3.3.7",
     "colors": "^2.2.0",
     "handlebars": "^4.0.5"
   }
