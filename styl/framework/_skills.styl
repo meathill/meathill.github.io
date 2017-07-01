@@ -1,9 +1,3 @@
-@charset "UTF-8"
-
-@import "../../../bower_components/colors/sass/variables"
-@import "../colors"
-@import "../define"
-
 #skills
   background-color: darken($BELIZE_HOLE, 5%)
   padding: $gap-lg 0 $gap-lg - $gap
@@ -38,6 +32,6 @@
       color: $gray
       font-weight: lighter
 
-@media (max-width: 432px)
-  #skills
-    padding-bottom: 0
+  @media (max-width: 432px)
+    &
+      padding-bottom: 0

@@ -1,0 +1,7 @@
+{
+  "bootstrap": "//cdn.staticfile.org/twitter-bootstrap/4.0.0-alpha.6/",
+  "font-awesome": "//cdn.staticfile.org/font-awesome/4.7.0/",
+  "jquery": "https://cdn.staticfile.org/jquery/3.2.1/",
+  "handlebars": "//cdn.staticfile.org/handlebars.js/4.0.7/",
+  "animate": "//cdn.staticfile.org/animate.css/3.5.2/"
+}

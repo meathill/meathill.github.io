@@ -4,11 +4,12 @@
 .idea
 
 # build
-.sass-cache
 src/css
+css/*.map
+js/main.js
+js/main.js.map
 
 # repo
-bower_components/
 node_modules/
 
 # assets
