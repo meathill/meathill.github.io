@@ -12,7 +12,7 @@ h3 {
 }
 .page-header {
   border-bottom-width: 3px;
-  color: $white;
+  color: #fff;
   margin: 0 auto 1.5rem;
   text-align: center;
   width: 30%;
@@ -33,7 +33,10 @@ a.external:after {
   }
 }
 #top-bar {
+  padding-top: 0;
+  padding-bottom: 0;
   transition: 0.3s all;
+  line-height: 2;
 }
 #top-bar.active {
   background-color: rgba(0,0,0,0.9);
@@ -51,24 +54,26 @@ a.external:after {
 }
 #top-bar .navbar-brand,
 #top-bar .navbar-toggle {
-  color: $white;
+  color: #fff;
 }
 #top-bar .navbar-toggle {
-  background-color: $gray;
-  border: 1px solid $white;
+  background-color: #aaa;
+  border: 1px solid #fff;
   line-height: 1em;
 }
 #top-bar .navbar-toggle.collapsed {
   background: none;
 }
-#top-bar .navbar-nav > li {
+#top-bar .nav-item {
   transition: 0.3s all;
 }
-#top-bar .navbar-nav > li > a {
-  color: $white;
+#top-bar .nav-item .nav-link {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  color: #fff;
 }
-#top-bar .navbar-nav > li.blog span {
-  background: $red;
+#top-bar .nav-item.blog span {
+  background: #ff4136;
   border-radius: 100%;
   color: #fff;
   font-family: Arial;
@@ -80,9 +85,9 @@ a.external:after {
   top: 0.375rem;
   right: 0;
 }
-#top-bar .navbar-nav > .active a {
+#top-bar .nav-item.active a {
   background: none;
-  border-bottom: 2px solid $white;
+  border-bottom: 2px solid #fff;
   font-weight: bold;
 }
 #top-bar .navbar-collapse.in,
@@ -106,41 +111,47 @@ a.external:after {
 }
 #main-slide {
   background-color: $olive;
+  color: #fff;
   height: 100%;
 }
 #main-slide .carousel-inner {
   height: 100%;
 }
-#main-slide .item {
-  color: $white;
+#main-slide .carousel-item {
+  background: no-repeat center/cover;
+  color: #fff;
   height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-#main-slide .item background:repeat: no-repeat {
-  position: center center;
-  size: cover;
+#main-slide p {
+  font-size: 1.5em;
+  max-width: 70%;
 }
-@include display-flex();
-@include justify-content(center);
-@include align-items(center);
-@include flex-direction(column);
+#main-slide .lead {
+  font-size: 2em;
+}
 #main-slide .socials {
-  padding-top: 1.5rem;
+  padding-top: 1rem;
 }
 #main-slide .socials a {
+  transition: all 0.2s;
   border: 2px solid currentColor;
   border-radius: 50%;
-  color: $white;
+  color: #fff;
   display: inline-block;
-  font-size: 1.5em;
+  font-size: 1.25em;
   line-height: 36px;
   text-align: center;
-  width: 40px;
+  width: 2.5rem;
 }
 #main-slide .socials a + a {
   margin-left: 0.75rem;
 }
 #main-slide .socials a:hover {
-  color: $yellow;
+  background-color: rgba(255,255,255,0.25);
+  color: #ffdc00;
 }
 #main-slide .slide-1 {
   background-image: url("http://7sbrxr.com1.z0.glb.clouddn.com/slide1.jpg");
@@ -150,49 +161,31 @@ a.external:after {
   height: 160px;
 }
 #main-slide .slide-1 h1 {
+  font-size: 4em;
+  margin: 2rem 0 1rem;
   text-shadow: 0 4px 1px rgba(0,0,0,0.25);
-}
-#main-slide .slide-1 h1 font:size: 5em {
-  weight: bold;
-  family: Helvetica, Arial, "Microsoft Yahei";
-}
-#main-slide .slide-1 .lead {
-  font-size: 2.5em;
-  color: $white;
-}
-#main-slide .slide-1 p {
-  font-size: 1.5em;
 }
 #main-slide .slide-2 {
   background-image: url("http://7sbrxr.com1.z0.glb.clouddn.com/slide2.jpg");
 }
-#main-slide .slide-2 h1 {
+#main-slide .slide-2 h2 {
+  font-size: 3em;
   text-shadow: 0 2px 1px rgba(0,0,0,0.25);
 }
-#main-slide .slide-2 h1 font:size: 3.5em {
-  weight: 600;
-  family: Helvetica, Arial, "Microsoft Yahei";
-}
-#main-slide .slide-2 .lead {
-  font-size: 2em;
-}
-#main-slide .slide-2 p {
-  font-size: 1.5em;
+#main-slide .btn img {
+  height: 1em;
 }
 @media (max-width: 432px) {
-  #main-slide .slide-1 h1 {
+  p {
+    max-width: 80%;
+  }
+  .slide-1 h1 {
     font-size: 2.5em;
-  }
-  #main-slide .slide-1 .lead {
-    font-size: 2em;
-  }
-  #main-slide .slide-2 p {
-    padding: 0 1.5rem;
   }
 }
 #about-me {
   background-color: #2980b9;
-  color: $white;
+  color: #fff;
   padding: 3rem 0;
 }
 #about-me .intro {
@@ -201,12 +194,12 @@ a.external:after {
 }
 #about-me .intro .gravatar {
   position: absolute;
-  border: 5px solid $white;
+  border: 5px solid #fff;
   top: 0;
   left: 1rem;
 }
 #about-me .intro h2 {
-  border-bottom: 2px solid $white;
+  border-bottom: 2px solid #fff;
   margin: 0 0 1.5rem;
   padding: 0 0 0.75rem;
   width: 30%;
@@ -221,7 +214,7 @@ a.external:after {
   max-width: 100%;
 }
 #about-me .resume {
-  border-left: 3px solid $white;
+  border-left: 3px solid #fff;
   margin: 0 0 0 110px;
   padding-left: 2.5rem;
 }
@@ -248,7 +241,7 @@ a.external:after {
   background-color: $orange;
   border: 3px solid #2980b9;
   border-radius: 100%;
-  color: $white;
+  color: #fff;
   width: 30px;
   height: 30px;
   line-height: 24px;
@@ -296,7 +289,7 @@ a.external:after {
   padding: 3rem 0 1.5rem;
 }
 #skills .item {
-  color: $white;
+  color: #fff;
   margin-bottom: 1.5rem;
 }
 #skills header {
@@ -322,7 +315,7 @@ a.external:after {
   text-align: right;
 }
 #skills footer .fa-star-o {
-  color: $gray;
+  color: #aaa;
   font-weight: lighter;
 }
 @media (max-width: 432px) {
@@ -332,7 +325,7 @@ a.external:after {
 }
 #power {
   background-color: #27ae60;
-  color: $white;
+  color: #fff;
   padding: 3rem 0;
   font-size: 16px;
 }
@@ -348,10 +341,10 @@ a.external:after {
   padding: 3rem 0;
 }
 #works article {
-  color: $white;
+  color: #fff;
 }
 #works article a {
-  color: $red;
+  color: #ff4136;
 }
 #works article a:hover {
   text-decoration: underline;
@@ -418,7 +411,7 @@ a.external:after {
   margin-top: 0;
 }
 #works .findx h2 small {
-  color: $white;
+  color: #fff;
   font-size: 0.5em;
 }
 #works .findx .labels {
@@ -548,15 +541,13 @@ a.external:after {
   padding-bottom: 0.75rem;
 }
 #blog #blog-grid li.has-thumbnail {
+  background: no-repeat center center;
+  background-size: cover;
   position: relative;
-}
-#blog #blog-grid li.has-thumbnail background:position: center center {
-  repeat: no-repeat;
-  size: cover;
 }
 #blog #blog-grid li.has-thumbnail h3 {
   background-color: rgba(0,0,0,0.6);
-  color: $white;
+  color: #fff;
   line-height: 1.5em;
   position: absolute;
   left: 0;
@@ -567,7 +558,7 @@ a.external:after {
   text-align: center;
 }
 #blog #blog-grid li.has-thumbnail a {
-  color: $white;
+  color: #fff;
 }
 #blog #blog-grid li.has-thumbnail a:hover {
   color: $silver;
@@ -608,7 +599,7 @@ a.external:after {
 }
 #contact {
   background-color: #d35400;
-  color: $white;
+  color: #fff;
   padding: 3rem 0;
 }
 @media (max-width: 432px) {
@@ -642,11 +633,11 @@ footer .socials a + a {
   margin-left: 0.75rem;
 }
 footer p {
-  color: $white;
+  color: #fff;
   margin: 1em 0 0;
 }
 footer p a {
-  color: $white;
+  color: #fff;
 }
 footer p a:hover {
   color: #e6e6e6;

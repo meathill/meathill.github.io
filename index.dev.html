@@ -16,11 +16,12 @@
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
   <link href="./css/screen.css" media="screen, projection" rel="stylesheet" />
+  <link rel="shortcut icon" type="image/png" href="./img/meathill.png" />
   <title>你好，我是Meathill。</title>
 </head>
 <body>
 
-<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top" role="navigation" id="top-bar">
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top" role="navigation" id="top-bar">
   <div class="container">
     <button type="button" class="navbar-toggler navbar-toggler-right collapsed" data-toggle="collapse" data-target="#top-bar-inner" aria-controls="top-bar-inner" aria-expanded="false" aria-label="收放导航">
       <i class="fa fa-bars"></i> <span class="sr-only">导航</span>
@@ -29,28 +30,28 @@
 
     <div class="collapse navbar-collapse" id="top-bar-inner">
       <ul class="navbar-nav ml-auto">
-        <li class="active"><a href="#hello">你好 <span class="sr-only">(current)</span></a></li>
-        <li><a href="#about-me">自我介绍</a></li>
-        <li><a href="#skills">技能</a></li>
-        <li><a href="#power">特长</a></li>
-        <li><a href="#works">作品集</a></li>
-        <li class="blog"><a href="#blog">近期博文</a></li>
-        <li><a href="http://weibo.com/meathill/" target="_blank">联系我</a></li>
+        <li class="nav-item active"><a class="nav-link" href="#hello">你好 <span class="sr-only">(current)</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="#about-me">自我介绍</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">技能</a></li>
+        <li class="nav-item"><a class="nav-link" href="#power">特长</a></li>
+        <li class="nav-item"><a class="nav-link" href="#works">作品集</a></li>
+        <li class="nav-item blog"><a class="nav-link" href="#blog">近期博文</a></li>
+        <li class="nav-item"><a class="nav-link" href="http://weibo.com/meathill/" target="_blank">联系我</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
 <a name="hello"></a>
-<div id="main-slide" class="carousel slide" data-ride="carousel">
+<div id="main-slide" class="carousel slide" data-ride="carousel" data-interval="8000">
   <ol class="carousel-indicators">
     <li data-target="#main-slide" data-slide-to="0" class="active"></li>
     <li data-target="#main-slide" data-slide-to="1"></li>
   </ol>
   <div class="carousel-inner" role="listbox">
-    <div class="item slide-1 active">
+    <div class="carousel-item slide-1 active">
       <img src="//qiniu.meathill.com/gravatar.jpg" class="img-circle img-thumbnail">
-      <h1>你好，我是Meathill</h1>
+      <h1>你好，我是 Meathill</h1>
       <p class="lead">全栈工程师，产品经理</p>
       <p>有家有口有狗，爱吃爱玩爱旅游</p>
       <div class="socials">
@@ -60,19 +61,25 @@
         <a href="http://cn.linkedin.com/pub/lujia-zhai/32/630/424/"><i class="fa fa-linkedin"></i></a>
       </div>
     </div>
-    <div class="item slide-2">
+    <div class="carousel-item slide-2">
       <h2>我正努力分享我的知识</h2>
-      <p class="lead">我相信在线教育很有前途！</p>
+      <p class="lead">我相信在线教育很有前途</p>
       <p>我希望在未来几个月中，录制一批有价值的技术教育视频，以前端为主，帮助开发人员提升自己，也为自己探索另一种可能。</p>
-      <p><a href="mailto:meathill@gmail.com" class="btn btn-primary btn-lg"><i class="fa fa-envelope"></i> 告诉我你希望看到的课程</a></p>
+      <p class="mt-3">
+        <a href="https://segmentfault.com/u/meathill/lives?type=started" class="btn btn-secondary btn-lg">
+          <img src="https://static.segmentfault.com/v-5954c7a4/global/img/logo-b.svg">
+          已开课程
+        </a>
+        <a href="mailto:meathill@gmail.com" class="btn btn-info btn-lg"><i class="fa fa-envelope"></i> 您希望看什么课程？</a>
+      </p>
     </div>
   </div>
-  <a class="left carousel-control" href="#main-slide" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+  <a class="carousel-control-prev" href="#main-slide" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">上一张</span>
   </a>
-  <a class="right carousel-control" href="#main-slide" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+  <a class="carousel-control-next" href="#main-slide" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">下一张</span>
   </a>
 </div>

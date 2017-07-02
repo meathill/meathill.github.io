@@ -7,7 +7,7 @@ import Blog from './Blog';
 let topbar = $('#top-bar');
 $(window).on('scroll', function () {
   let offset = document.body.scrollTop;
-  topbar.toggleClass('active', offset > 0);
+  topbar.toggleClass('bg-inverse', offset > 0);
   for (let i = points.length - 1; i > -1; i--) {
     if (points[i] - offset < 73 && points[i] - offset > -33) { // top-bar高度是53，给20px适配
       topbar.find('li').eq(i).addClass('active')

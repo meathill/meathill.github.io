@@ -1,44 +1,46 @@
 #main-slide
-  background-color: $olive
-  height: 100%
+  background-color $olive
+  color white
+  height 100%
 
   .carousel-inner
     height: 100%
 
-  .item
-    background:
-      repeat: no-repeat
-      position: center center
-      size: cover
-    color: $white
+  .carousel-item
+    background no-repeat center/cover
+    color: white
     height: 100%
+    flex-direction column
+    justify-content center
+    align-items center
 
-    &.left,
-    &.right,
-    &.active
-      @include display-flex()
-      @include justify-content(center)
-      @include align-items(center)
-      @include flex-direction(column)
+  p
+    font-size: 1.5em
+    max-width 70%
+
+  .lead
+    font-size: 2em
 
   .socials
-    padding-top: $gap
+    padding-top: $gap-m
 
     a
+      transition all .2s
       border: 2px solid currentColor
       border-radius: 50%
-      color: $white
+      color: white
       display: inline-block
-      font-size: 1.5em
+      font-size: 1.25em
       line-height: 36px
       text-align: center
-      width: 40px
+      width: 2.5rem
 
       + a
-        margin-left: $gap-s
+        margin-left $gap-s
 
       &:hover
-        color: $yellow
+        background-color rgba(255,255,255,.25)
+        color yellow
 
   .slide-1
     background-image: url(http://7sbrxr.com1.z0.glb.clouddn.com/slide1.jpg)
@@ -48,44 +50,25 @@
       height: 160px
 
     h1
-      font:
-        size: 5em
-        weight: bold
-        family: Helvetica, Arial, "Microsoft Yahei"
+      font-size 4em
+      margin 2rem 0 1rem
       text-shadow: 0 4px 1px rgba(0, 0, 0, .25)
-
-    .lead
-      font-size: 2.5em
-      color: $white
-
-    p
-      font-size: 1.5em
 
   .slide-2
     background-image: url(http://7sbrxr.com1.z0.glb.clouddn.com/slide2.jpg)
 
-    h1
-      font:
-        size: 3.5em
-        weight: 600
-        family: Helvetica, Arial, "Microsoft Yahei"
+    h2
+      font-size 3em
       text-shadow: 0 2px 1px rgba(0, 0, 0, .25)
 
-    .lead
-      font-size: 2em
-
-    p
-      font-size: 1.5em
+  .btn img
+    height 1em
 
 @media (max-width: 432px)
-  #main-slide
+  &
+    p
+      max-width 80%
+
     .slide-1
       h1
         font-size: 2.5em
-
-      .lead
-        font-size: 2em
-
-    .slide-2
-      p
-        padding: 0 $gap
