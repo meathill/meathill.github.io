@@ -10,27 +10,31 @@ h2,
 h3 {
   font-family: '"Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", Simhei, sans-serif';
 }
-.page-header {
-  border-bottom-width: 3px;
-  color: #fff;
-  margin: 0 auto 1.5rem;
-  text-align: center;
-  width: 30%;
-}
-.page-header h2 {
-  margin-top: 0;
-}
-a.external:after {
+a.external::after {
   content: $fa-var-external-link-square;
   font-family: FontAwesome;
   margin-left: 0.25em;
 }
-@media (max-width: 375px) {
+@media (max-width: 575px) {
   .page-header {
     margin-left: 20px;
     margin-right: 20px;
     width: auto;
   }
+}
+.img-circle {
+  border-radius: 50%;
+}
+.page-header {
+  border-bottom: 3px solid currentColor;
+  color: #fff;
+  margin: 0 auto 1.5rem;
+  padding-bottom: 0.5rem;
+  text-align: center;
+  width: 30%;
+}
+.page-header h2 {
+  margin-top: 0;
 }
 #top-bar {
   padding-top: 0;
@@ -94,7 +98,7 @@ a.external:after {
 #top-bar .collapsing {
   background-color: rgba(0,0,0,0.9);
 }
-@media (max-width: 432px) {
+@media (max-width: 575px) {
   .navbar-nav {
     margin-top: 0;
     margin-bottom: 0;
@@ -154,7 +158,7 @@ a.external:after {
   color: #ffdc00;
 }
 #main-slide .slide-1 {
-  background-image: url("http://7sbrxr.com1.z0.glb.clouddn.com/slide1.jpg");
+  background-image: url("http://qiniu.meathill.com/slide1.jpg");
 }
 #main-slide .slide-1 .img-circle {
   width: 160px;
@@ -166,7 +170,7 @@ a.external:after {
   text-shadow: 0 4px 1px rgba(0,0,0,0.25);
 }
 #main-slide .slide-2 {
-  background-image: url("http://7sbrxr.com1.z0.glb.clouddn.com/slide2.jpg");
+  background-image: url("http://qiniu.meathill.com/slide2.jpg");
 }
 #main-slide .slide-2 h2 {
   font-size: 3em;
@@ -175,7 +179,7 @@ a.external:after {
 #main-slide .btn img {
   height: 1em;
 }
-@media (max-width: 432px) {
+@media (max-width: 575px) {
   p {
     max-width: 80%;
   }
@@ -186,17 +190,12 @@ a.external:after {
 #about-me {
   background-color: #2980b9;
   color: #fff;
-  padding: 3rem 0;
+}
+#about-me .gravatar {
+  width: 100%;
 }
 #about-me .intro {
-  padding-left: 103.25px;
   position: relative;
-}
-#about-me .intro .gravatar {
-  position: absolute;
-  border: 5px solid #fff;
-  top: 0;
-  left: 1rem;
 }
 #about-me .intro h2 {
   border-bottom: 2px solid #fff;
@@ -205,7 +204,7 @@ a.external:after {
   width: 30%;
 }
 #about-me .intro a {
-  color: $yellow;
+  color: #ffdc00;
 }
 #about-me .weibo {
   margin-top: 1.5rem;
@@ -214,9 +213,9 @@ a.external:after {
   max-width: 100%;
 }
 #about-me .resume {
-  border-left: 3px solid #fff;
-  margin: 0 0 0 110px;
-  padding-left: 2.5rem;
+  border-left: 0.125rem solid #fff;
+  margin: 0 0 0 6rem;
+  padding-left: 1.375rem;
 }
 #about-me .resume li {
   padding: 0.75rem 0;
@@ -238,24 +237,25 @@ a.external:after {
   margin-top: 0.75rem;
 }
 #about-me .resume i {
-  background-color: $orange;
+  background-color: #ff851b;
   border: 3px solid #2980b9;
-  border-radius: 100%;
+  border-radius: 50%;
   color: #fff;
   width: 30px;
   height: 30px;
   line-height: 24px;
   text-align: center;
-  margin-left: 3px;
+  font-size: 0.75rem;
 }
 #about-me .resume time {
-  font-family: Arial;
   position: absolute;
   top: 0.75rem;
-  left: -94px;
+  left: -7rem;
+  width: 6.5rem;
+  text-align: right;
 }
 #about-me .resume + .btn {
-  margin-left: 110px;
+  margin-left: 6rem;
   margin-top: 1.5rem;
   padding: 6px 1.5rem;
 }
@@ -286,7 +286,6 @@ a.external:after {
 }
 #skills {
   background-color: #277ab0;
-  padding: 3rem 0 1.5rem;
 }
 #skills .item {
   color: #fff;
@@ -295,30 +294,34 @@ a.external:after {
 #skills header {
   background-color: #2573a7;
   border-radius: 6px 6px 0 0;
-  padding: 1rem;
-}
-#skills header .logo {
-  display: block;
-  max-width: 80px;
-  max-height: 80px;
-  float: left;
-  margin-right: 1rem;
-}
-#skills header h3 {
-  margin: 0;
-}
-#skills footer {
-  background-color: #236d9d;
-  border-radius: 0 0 6px 6px;
-  font-size: 1.5em;
-  padding: 1rem;
+  height: 7rem;
+  padding: 1rem 1rem 1rem 6rem;
+  position: relative;
   text-align: right;
 }
-#skills footer .fa-star-o {
+#skills header .logo {
+  max-width: 5rem;
+  max-height: 5rem;
+  margin-right: 1rem;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+#skills header .fa {
+  font-size: 1.5rem;
+}
+#skills header .fa-star-half-o {
   color: #aaa;
   font-weight: lighter;
 }
-@media (max-width: 432px) {
+#skills h3 {
+  background-color: #236d9d;
+  border-radius: 0 0 6px 6px;
+  font-size: 1.5em;
+  margin: 0;
+  padding: 1rem;
+}
+@media (max-width: 575px) {
   #skills {
     padding-bottom: 0;
   }
@@ -607,14 +610,14 @@ a.external:after {
     padding-bottom: 1.5rem;
   }
 }
-footer {
+#footer {
   background-color: #34495e;
   line-height: 2.5em;
   text-align: center;
   position: relative;
   padding: 1.5rem 0;
 }
-footer .socials a {
+#footer .socials a {
   border: 3px solid #3498db;
   color: #3498db;
   border-radius: 100%;
@@ -625,25 +628,25 @@ footer .socials a {
   font-size: 20px;
   text-align: center;
 }
-footer .socials a:hover {
+#footer .socials a:hover {
   border-color: #258bcf;
   color: #258bcf;
 }
-footer .socials a + a {
+#footer .socials a + a {
   margin-left: 0.75rem;
 }
-footer p {
+#footer p {
   color: #fff;
   margin: 1em 0 0;
 }
-footer p a {
+#footer p a {
   color: #fff;
 }
-footer p a:hover {
+#footer p a:hover {
   color: #e6e6e6;
   text-decoration: underline;
 }
-footer .top-button {
+#footer .top-button {
   color: #3498db;
   position: absolute;
   line-height: 1.5em;

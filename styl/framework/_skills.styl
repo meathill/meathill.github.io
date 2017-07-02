@@ -1,6 +1,5 @@
 #skills
   background-color: darken($BELIZE_HOLE, 5%)
-  padding: $gap-lg 0 $gap-lg - $gap
 
   .item
     color: white
@@ -9,29 +8,33 @@
   header
     background-color: darken($BELIZE_HOLE, 10%)
     border-radius: 6px 6px 0 0
-    padding: $gap-m
+    height 7rem
+    padding: 1rem 1rem 1rem 6rem
+    position relative
+    text-align right
 
     .logo
-      display: block
-      max-width: 80px
-      max-height: 80px
-      float: left
+      max-width: 5rem
+      max-height: 5rem
       margin-right: $gap-m
+      position absolute
+      top 1rem
+      left 1rem
 
-    h3
-      margin: 0
+    .fa
+      font-size 1.5rem
 
-  footer
-    background-color: darken($BELIZE_HOLE, 15%)
-    border-radius: 0 0 6px 6px
-    font-size: 1.5em
-    padding: $gap-m
-    text-align: right
-
-    .fa-star-o
+    .fa-star-half-o
       color: gray
       font-weight: lighter
 
-  @media (max-width: 432px)
+  h3
+    background-color: darken($BELIZE_HOLE, 15%)
+    border-radius: 0 0 6px 6px
+    font-size: 1.5em
+    margin: 0
+    padding: $gap-m
+
+  @media (max-width: $xs-max-width)
     &
       padding-bottom: 0

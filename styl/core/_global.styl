@@ -7,22 +7,12 @@ body
 h1, h2, h3
   font-family $heading-font
 
-.page-header
-  border-bottom-width: 3px
-  color: white
-  margin: 0 auto $gap
-  text-align: center
-  width: 30%
-
-  h2
-    margin-top: 0
-
-a.external:after
+a.external::after
   content: $fa-var-external-link-square
   font-family: FontAwesome
   margin-left: 0.25em
 
-@media (max-width: 375px)
+@media (max-width: $xs-max-width)
   .page-header
     margin-left: 20px
     margin-right: 20px

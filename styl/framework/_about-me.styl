@@ -1,17 +1,12 @@
 #about-me
   background-color: $BELIZE_HOLE
   color: white
-  padding: $gap-lg 0
+
+  .gravatar
+    width 100%
 
   .intro
-    padding-left: 100px + $gap + $gap-s + $gap-m
     position: relative
-
-    .gravatar
-      position: absolute
-      border: 5px solid white
-      top: 0
-      left: $gap-m
 
     h2
       border-bottom: 2px solid white
@@ -20,7 +15,7 @@
       width: 30%
 
     a
-      color: $yellow
+      color: yellow
 
   .weibo
     margin-top: $gap
@@ -29,9 +24,9 @@
       max-width: 100%
 
   .resume
-    border-left: 3px solid white
-    margin: 0 0 0 110px
-    padding-left: $gap + 1px
+    border-left: .125rem solid white
+    margin: 0 0 0 6rem
+    padding-left: 1.375rem
 
     li
       padding: $gap-s 0
@@ -53,24 +48,25 @@
         margin-top: $gap-s
 
     i
-      background-color: $orange
+      background-color: orange
       border: 3px solid $BELIZE_HOLE
-      border-radius: 100%
+      border-radius: 50%
       color: white
       width: 30px
       height: 30px
       line-height: 24px
       text-align: center
-      margin-left: 3px
+      font-size .75rem
 
     time
-      font-family: Arial
       position: absolute
       top: $gap-s
-      left: -94px
+      left -7rem
+      width 6.5rem
+      text-align right
 
     + .btn
-      margin-left: 110px
+      margin-left: 6rem
       margin-top: $gap
       padding: 6px $gap
 
