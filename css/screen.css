@@ -11,7 +11,7 @@ h3 {
   font-family: '"Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", Simhei, sans-serif';
 }
 a.external::after {
-  content: $fa-var-external-link-square;
+  content: "\f14c";
   font-family: FontAwesome;
   margin-left: 0.25em;
 }
@@ -114,7 +114,7 @@ a.external::after {
   }
 }
 #main-slide {
-  background-color: $olive;
+  background-color: #3d9970;
   color: #fff;
   height: 100%;
 }
@@ -561,9 +561,11 @@ a.external::after {
   color: #fff;
 }
 #blog-grid li.has-thumbnail a:hover {
-  color: $silver;
+  color: #ddd;
 }
-@include flex-direction(column);
+#blog-grid li.no-thumbnail {
+  flex-direction: column;
+}
 #blog-grid li.no-thumbnail a {
   color: #b25e14;
 }
