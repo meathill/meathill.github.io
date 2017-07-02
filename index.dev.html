@@ -210,7 +210,7 @@
 </div>
 
 <a name="power"></a>
-<div id="power">
+<div id="power" class="py-4">
   <div class="page-header">
     <h2>特长</h2>
   </div>
@@ -244,7 +244,7 @@
         <article>
           <p>人身苦短，及时行乐哟~</p>
           <p>我的爱好非常广泛，打篮球、游泳、旅游、看电影、读小说、打游戏，不一而足。</p>
-          <p>游戏里文明、DND、山口山，都是我的最爱。</p>
+          <p>游戏里文明、DND、山口山，都是我的最爱。目前主玩炉石。</p>
         </article>
       </div>
     </div>
@@ -252,7 +252,7 @@
 </div>
 
 <a name="works"></a>
-<div id="works">
+<div id="works" class="py-4">
   <div class="page-header">
     <h2>作品集</h2>
   </div>
@@ -265,27 +265,22 @@
       </ol>
 
       <div class="carousel-inner" role="listbox">
-        <div class="item active gamepop">
-          <div class="img"><img src="http://qiniu.meathill.com/gamepop1.png"></div>
-          <div class="img right"><img src="http://7sbrxr.com1.z0.glb.clouddn.com/gamepop2.png" class=""></div>
+        <div class="carousel-item findx">
+          <header><img src="http://qiniu.meathill.com/findx.png"></header>
           <article>
-            <h2>游戏百科</h2>
             <p class="labels">
-              <span class="label">手机应用</span>
-              <span class="label">Hybrid</span>
-              <span class="label">HTML5 SPA</span>
+              <span class="label">专题</span>
+              <span class="label">活动</span>
+              <span class="label">动画效果</span>
             </p>
-            <ul>
-              <li>Hybrid应用，主要业务逻辑使用Web技术开发</li>
-              <li>充分发挥HTML5+CSS3能力</li>
-              <li>80%核心代码通用，20%各平台适配</li>
-              <li>踩过无数的坑，终于到达不怎么理想的彼岸……</li>
-              <li>由于各种原因，该项目被暂时搁置……</li>
-              <li><a href="https://github.com/Dianjoy/gamepop" class="external" target="_blank">Github</a> | <a href="http://m.yxpopo.com/" target="_blank" class="external">Demo</a></li>
-            </ul>
+            <h2>真假应用大找茬</h2>
+            <p>专题本身不复杂，一个JS就把所有逻辑写完了。</p>
+            <p>值得一提的是使用了很多CSS3动画，并采用PreloadJS进行加载，用户体验提升了不少。</p>
+            <p>这次基本兼容各浏览器，不过在破浏览器上看不到效果。</p>
+            <p><a href="https://github.com/meathill-freelance/copycat" target="_blank" class="external">Github</a> | <a href="http://demo.meathill.com/copycat" target="_blank" class="external">Demo</a></p>
           </article>
         </div>
-        <div class="item xline">
+        <div class="carousel-item xline">
           <img src="http://qiniu.meathill.com/xline.png">
           <article>
             <h2>XLINE.COM球衣定制</h2>
@@ -303,29 +298,34 @@
             </ul>
           </article>
         </div>
-        <div class="item findx">
-          <header><img src="http://qiniu.meathill.com/findx.png"></header>
+        <div class="carousel-item active gamepop">
+          <div class="img"><img src="http://qiniu.meathill.com/gamepop1.png"></div>
+          <div class="img right"><img src="http://qiniu.meathill.com/gamepop2.png" class=""></div>
           <article>
+            <h2>游戏百科</h2>
             <p class="labels">
-              <span class="label">专题</span>
-              <span class="label">活动</span>
-              <span class="label">动画效果</span>
+              <span class="label">手机应用</span>
+              <span class="label">Hybrid</span>
+              <span class="label">HTML5 SPA</span>
             </p>
-            <h2>真假应用大找茬</h2>
-            <p>专题本身不复杂，一个JS就把所有逻辑写完了。</p>
-            <p>值得一提的是使用了很多CSS3动画，并采用PreloadJS进行加载，用户体验提升了不少。</p>
-            <p>这次基本兼容各浏览器，不过在破浏览器上看不到效果。</p>
-            <p><a href="https://github.com/meathill-freelance/copycat" target="_blank" class="external">Github</a> | <a href="http://demo.meathill.com/copycat" target="_blank" class="external">Demo</a></p>
+            <ul>
+              <li>Hybrid应用，主要业务逻辑使用Web技术开发</li>
+              <li>充分发挥HTML5+CSS3能力</li>
+              <li>80%核心代码通用，20%各平台适配</li>
+              <li>踩过无数的坑，终于到达不怎么理想的彼岸……</li>
+              <li>由于各种原因，该项目被暂时搁置……</li>
+              <li><a href="https://github.com/Dianjoy/gamepop" class="external" target="_blank">Github</a> | <a href="http://m.yxpopo.com/" target="_blank" class="external">Demo</a></li>
+            </ul>
           </article>
         </div>
       </div>
 
-      <a class="left carousel-control" href="#works-slide" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
+      <a class="carousel-control-prev" href="#works-slide" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
         <span class="sr-only">上一组</span>
       </a>
-      <a class="right carousel-control" href="#works-slide" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
+      <a class="carousel-control-next" href="#works-slide" role="button" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
         <span class="sr-only">下一组</span>
       </a>
     </div>
@@ -333,36 +333,34 @@
 </div>
 
 <a name="blog"></a>
-<div id="blog">
+<div id="blog" class="py-4">
   <div class="page-header">
     <h2>近期博文</h2>
   </div>
   <div class="container">
-    <ul id="blog-grid" class="row" data-latest="{{latest}}">
-
-    </ul>
+    <ul id="blog-grid" class="row" data-latest="{{latest}}"></ul>
     <div class="blog-link">
       <a class="btn btn-danger btn-lg" href="http://blog.meathill.com/"><i class="fa fa-book"></i> 访问博客</a>
     </div>
   </div>
 </div>
 
-<footer id="footer">
-  <div class="container">
-    <div class="socials">
-      <a href="http://weibo.com/meathill"><i class="fa fa-weibo"></i></a>
-      <a href="http://twitter.com/meathill1"><i class="fa fa-twitter"></i></a>
-      <a href="http://plus.google.com/meathill"><i class="fa fa-google-plus"></i></a>
-      <a href="http://cn.linkedin.com/pub/lujia-zhai/32/630/424/"><i class="fa fa-linkedin"></i></a>
-    </div>
-    <p>
-      Copyright @ 2016 Meathill，保留所有权利
-      &nbsp;|&nbsp; 粤ICP备15055091号
-      &nbsp;|&nbsp; 当前版本：{{version}}
-      &nbsp;|&nbsp; <a href="https://github.com/meathill/meathill.github.io" target="_blank">源代码</a>
-    </p>
-    <a href="#hello" class="top-button"><i class="fa fa-chevron-up"></i> TOP</a>
+<footer id="footer" class="py-4">
+  <div class="socials">
+    <a href="http://weibo.com/meathill"><i class="fa fa-weibo"></i></a>
+    <a href="http://twitter.com/meathill1"><i class="fa fa-twitter"></i></a>
+    <a href="http://plus.google.com/meathill"><i class="fa fa-google-plus"></i></a>
+    <a href="http://cn.linkedin.com/pub/lujia-zhai/32/630/424/"><i class="fa fa-linkedin"></i></a>
   </div>
+  <p>
+    Copyright @ 2017 Meathill，保留所有权利
+    &nbsp;|&nbsp; 粤ICP备15055091号
+    &nbsp;|&nbsp; 当前版本：{{version}}
+    &nbsp;|&nbsp; <a href="https://github.com/meathill/meathill.github.io" target="_blank">
+    <i class="fa fa-github"></i> 源代码
+  </a>
+  </p>
+  <a href="#hello" class="top-button"><i class="fa fa-chevron-up"></i> TOP</a>
 </footer>
 
 <script src="node_modules/jquery/dist/jquery.min.js"></script>

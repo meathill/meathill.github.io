@@ -1,83 +1,80 @@
 #blog
   background-color: $CARROT
-  padding: $gap-lg 0
-
-  #blog-grid
-    color: darken($CARROT, 25%)
-    margin-bottom: 0
-    padding: 0 20px
-
-    li
-      background-color: lighten($CARROT, 10%)
-      border-right: 2px solid $CARROT
-      list-style: none
-      min-height: 200px
-
-      &:nth-child(1),
-      &:nth-child(2),
-      &:nth-child(3)
-        border-bottom: 2px solid $CARROT
-
-      &:nth-child(3n)
-        border-right: none
-
-      h3
-        border-bottom: 1px solid darken($CARROT, 10%)
-        margin: 0 0 $gap-s
-        padding-bottom: $gap-s
-
-      &.has-thumbnail
-        background no-repeat center center
-        background-size cover
-        position: relative
-
-        h3
-          background-color: rgba(0, 0, 0, .6)
-          color: white
-          line-height: 1.5em
-          position: absolute
-          left: 0
-          right: 0
-          bottom: 0
-          margin-bottom: 0
-          padding-bottom: 0
-          text-align: center
-
-        a
-          color: white
-
-          &:hover
-            color: $silver
-
-      &.no-thumbnail
-        @include display-flex()
-        @include flex-direction(column)
-        @include justify-content(center)
-        @include align-items(center)
-
-        a
-          color: darken($CARROT, 25%)
-
-          &:hover
-            background-color: rgba(0, 0, 0, 0.1)
-            color: darken($CARROT, 32%)
-            text-decoration: none
+  font-size .85rem
 
   .btn
     display: block
-    margin: $gap auto 0
+    margin: 0 auto
     width: 30%
+
+#blog-grid
+  color: darken($CARROT, 25%)
+  margin-bottom: $gap
+  padding: 0
+
+  li
+    background-color: lighten($CARROT, 10%)
+    border-right: 2px solid $CARROT
+    list-style: none
+    min-height: 200px
+    padding-top 1rem
+
+    &:nth-child(-n+3)
+      border-bottom: 2px solid $CARROT
+
+    &:nth-child(3n)
+      border-right: none
+
+    h3
+      border-bottom: 1px solid darken($CARROT, 10%)
+      font-size 1.5rem
+      margin: 0 0 $gap-s
+      padding-bottom: $gap-s
+
+    &.has-thumbnail
+      background no-repeat center center
+      background-size cover
+      position: relative
+
+      h3
+        background-color: rgba(0, 0, 0, .6)
+        color: white
+        line-height: 1.5em
+        position: absolute
+        left: 0
+        right: 0
+        bottom: 0
+        margin-bottom: 0
+        padding-bottom: 0
+        text-align: center
+
+      a
+        color: white
+
+        &:hover
+          color: $silver
+
+    &.no-thumbnail
+      @include flex-direction(column)
+
+      a
+        color: darken($CARROT, 25%)
+
+        &:hover
+          background-color: rgba(0, 0, 0, 0.1)
+          color: darken($CARROT, 32%)
+          text-decoration: none
 
 @media (max-width: 432px)
   #blog
     padding-bottom: $gap
 
-    #blog-grid
-      li
-        border: none
+  #blog-grid
+    li
+      border: none
 
-        + li
-          margin-top: $gap-xs
+      + li
+        margin-top: $gap-xs
 
     .blog-link
       padding: 0 $gap-xs

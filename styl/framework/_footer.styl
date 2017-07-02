@@ -3,27 +3,26 @@
   line-height: 2.5em
   text-align: center
   position: relative
-  padding: $gap 0
 
-  .socials
+  .socials a
+    border: 3px solid $PETER_RIVER
+    color: $PETER_RIVER
+    border-radius: 100%
+    display: inline-block
+    width: 40px
+    height: 40px
+    line-height: 34px
+    font-size: 20px
+    text-align: center
+    transition all .2s
 
-    a
-      border: 3px solid $PETER_RIVER
-      color: $PETER_RIVER
-      border-radius: 100%
-      display: inline-block
-      width: 40px
-      height: 40px
-      line-height: 34px
-      font-size: 20px
-      text-align: center
+    &:hover
+      background-color rgba(255,255,255,.25)
+      border-color: darken($PETER_RIVER, 10%)
+      color: darken($PETER_RIVER, 10%)
 
-      &:hover
-        border-color: darken($PETER_RIVER, 10%)
-        color: darken($PETER_RIVER, 10%)
-
-      + a
-        margin-left: $gap-s
+    + a
+      margin-left: $gap-s
 
   p
     color: white
@@ -39,7 +38,6 @@
   .top-button
     color: $PETER_RIVER
     position: absolute
-    line-height: 1.5em
     right: 2em
     bottom: $gap
 
