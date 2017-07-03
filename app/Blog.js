@@ -82,6 +82,10 @@ export default class Blog {
     if (list.length === 0) {
       return;
     }
+    list = list.map(item => {
+      item.thumbnail = item.thumbnail.replace('//blog.meathill.com/', '//qiniu.meathill.com');
+      return item;
+    });
     localStorage.setItem(KEY, store);
     this.render(list);
   }

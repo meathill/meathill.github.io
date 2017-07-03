@@ -4,7 +4,7 @@
   .item
     color: white
 
-    &:nth-child(n+4)
+    &:nth-child(n+5)
       margin-top: $gap
 
   header
@@ -16,8 +16,8 @@
     text-align right
 
     .logo
-      max-width: 5rem
-      max-height: 5rem
+      width: 5rem
+      height: 5rem
       margin-right: $gap-m
       position absolute
       top 1rem
@@ -38,5 +38,5 @@
     padding: $gap-m
 
   @media (max-width: $xs-max-width)
-    &
-      padding-bottom: 0
+    & .item:nth-child(n+3)
+      margin-top .75rem

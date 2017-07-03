@@ -30,6 +30,10 @@
     &.collapsed
       background: none
 
+  .navbar-toggler-right
+    top .5rem
+    right 0
+
   .nav-item
     transition: 0.3s all
 
@@ -60,17 +64,17 @@
   .collapsing
     background-color: rgba(0, 0, 0, .9)
 
-@media (max-width: $xs-max-width)
-  .navbar-nav
-    margin-top: 0
-    margin-bottom: 0
+  @media (max-width: $xs-max-width)
+    &
+      &:hover
+        background-color #555
 
-  .navbar-collapse
-    border-top: none
+      .container
+        margin-left 0
+        margin-right 0
 
-  #top-bar
-    .active
-      background-color: lighten($navbar-inverse-bg, 15%)
+      .active
+        background-color: lighten($navbar-inverse-bg, 15%)
 
-    .navbar-nav > .active a
-      border-bottom: none
+      .navbar-nav > .active a
+        border-bottom: none

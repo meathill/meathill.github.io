@@ -14,6 +14,15 @@
     justify-content center
     align-items center
 
+  h1
+    font-size 4em
+    margin 2rem 0 1rem
+    text-shadow: 0 4px 1px rgba(0, 0, 0, .25)
+
+  h2
+    font-size 3em
+    text-shadow: 0 2px 1px rgba(0, 0, 0, .25)
+
   p
     font-size: 1.5em
     max-width 70%
@@ -46,29 +55,37 @@
     background-image: url(http://qiniu.meathill.com/slide1.jpg)
 
     .img-circle
-      width: 160px
-      height: 160px
-
-    h1
-      font-size 4em
-      margin 2rem 0 1rem
-      text-shadow: 0 4px 1px rgba(0, 0, 0, .25)
+      width: 10rem
+      height: 10rem
 
   .slide-2
     background-image: url(http://qiniu.meathill.com/slide2.jpg)
 
-    h2
-      font-size 3em
-      text-shadow: 0 2px 1px rgba(0, 0, 0, .25)
+  .btn
+    img
+      height 1em
 
-  .btn img
-    height 1em
+    + .btn
+      margin-left .5rem
 
-@media (max-width: $xs-max-width)
-  &
-    p
-      max-width 80%
-
-    .slide-1
+  @media (max-width: $xs-max-width)
+    &
       h1
-        font-size: 2.5em
+        font-size: 2em
+
+      h2
+        font-size 1.75rem
+
+      p
+        font-size 1rem
+        max-width 80%
+
+        &.lead
+          font-size 1.25rem
+
+      .btn
+        display block
+
+        + .btn
+          margin-left 0
+          margin-top .5rem

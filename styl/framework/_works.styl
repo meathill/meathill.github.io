@@ -20,22 +20,22 @@
       max-width: 100%
       height: auto
 
+  .labels
+    text-align: center
+
+    .badge
+      background-color: $CARROT
+      font-size .75rem
+      font-weight: normal
+
   .gamepop,
   .xline
-    &.active,
-    &.left,
-    &.right
-      display: flex
-
-    article
-      flex: 1
-
     h2
       text-align: center
 
     ul
-      font-size: 1.5em
-      line-height: 2em
+      font-size: 1.25em
+      line-height: 2
 
   .gamepop
     .right
@@ -73,12 +73,11 @@
     p:last-child
       margin-bottom: 0
 
-  .labels
-    text-align: center
+  .meart
+    flex-direction column
 
-    .label
-      background-color: $CARROT
-      font-weight: normal
+    h2
+      text-align center
 
 @media (max-width: $xs-max-width)
   #works
@@ -97,27 +96,11 @@
 
     .gamepop,
     .xline
-      &.active,
-      &.left,
-      &.right
-        display: block
 
       ul
         font-size: 1em
 
     .gamepop
-      .img
-        display: inline-block
-        width: 44%
-        margin-left: 5%
-        vertical-align: top
-
-        &.right
-          margin-left: 0
-          margin-right: 5%
-
-      article
-        width: 100%
 
     .xline
       article

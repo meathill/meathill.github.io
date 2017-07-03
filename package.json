@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "stylus": "mkdir css & stylus -w -m styl/*.styl -o css/",
+    "stylus": "mkdir css & stylus -w -m styl/screen.styl -o css/",
     "webpack": "webpack"
   },
   "repository": {
@@ -17,7 +17,7 @@
     "profile"
   ],
   "author": "Meathill <meathill@gmail.com>",
-  "license": "(MIT OR CC-NC-NM-4.0)",
+  "license": "(MIT OR CC-BY-NC-NM-4.0)",
   "bugs": {
     "url": "https://github.com/meathill/meathill.github.io/issues"
   },

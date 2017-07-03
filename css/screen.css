@@ -15,13 +15,6 @@ a.external::after {
   font-family: FontAwesome;
   margin-left: 0.25em;
 }
-@media (max-width: 575px) {
-  .page-header {
-    margin-left: 20px;
-    margin-right: 20px;
-    width: auto;
-  }
-}
 .img-circle {
   border-radius: 50%;
 }
@@ -35,6 +28,12 @@ a.external::after {
 }
 .page-header h2 {
   margin-top: 0;
+}
+@media (max-width: 575px) {
+  .page-header {
+    margin-left: 2rem;
+    margin-right: 2rem width auto;
+  }
 }
 #top-bar {
   padding-top: 0;
@@ -68,6 +67,10 @@ a.external::after {
 #top-bar .navbar-toggle.collapsed {
   background: none;
 }
+#top-bar .navbar-toggler-right {
+  top: 0.5rem;
+  right: 0;
+}
 #top-bar .nav-item {
   transition: 0.3s all;
 }
@@ -99,12 +102,12 @@ a.external::after {
   background-color: rgba(0,0,0,0.9);
 }
 @media (max-width: 575px) {
-  .navbar-nav {
-    margin-top: 0;
-    margin-bottom: 0;
+  #top-bar:hover {
+    background-color: #555;
   }
-  .navbar-collapse {
-    border-top: none;
+  #top-bar .container {
+    margin-left: 0;
+    margin-right: 0;
   }
   #top-bar .active {
     background-color: #636363;
@@ -128,6 +131,15 @@ a.external::after {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+#main-slide h1 {
+  font-size: 4em;
+  margin: 2rem 0 1rem;
+  text-shadow: 0 4px 1px rgba(0,0,0,0.25);
+}
+#main-slide h2 {
+  font-size: 3em;
+  text-shadow: 0 2px 1px rgba(0,0,0,0.25);
 }
 #main-slide p {
   font-size: 1.5em;
@@ -161,30 +173,38 @@ a.external::after {
   background-image: url("http://qiniu.meathill.com/slide1.jpg");
 }
 #main-slide .slide-1 .img-circle {
-  width: 160px;
-  height: 160px;
-}
-#main-slide .slide-1 h1 {
-  font-size: 4em;
-  margin: 2rem 0 1rem;
-  text-shadow: 0 4px 1px rgba(0,0,0,0.25);
+  width: 10rem;
+  height: 10rem;
 }
 #main-slide .slide-2 {
   background-image: url("http://qiniu.meathill.com/slide2.jpg");
 }
-#main-slide .slide-2 h2 {
-  font-size: 3em;
-  text-shadow: 0 2px 1px rgba(0,0,0,0.25);
-}
 #main-slide .btn img {
   height: 1em;
 }
+#main-slide .btn + .btn {
+  margin-left: 0.5rem;
+}
 @media (max-width: 575px) {
-  p {
+  #main-slide h1 {
+    font-size: 2em;
+  }
+  #main-slide h2 {
+    font-size: 1.75rem;
+  }
+  #main-slide p {
+    font-size: 1rem;
     max-width: 80%;
   }
-  .slide-1 h1 {
-    font-size: 2.5em;
+  #main-slide p.lead {
+    font-size: 1.25rem;
+  }
+  #main-slide .btn {
+    display: block;
+  }
+  #main-slide .btn + .btn {
+    margin-left: 0;
+    margin-top: 0.5rem;
   }
 }
 #about-me {
@@ -259,19 +279,13 @@ a.external::after {
   margin-top: 1.5rem;
   padding: 6px 1.5rem;
 }
-@media (max-width: 432px) {
-  #about-me {
-    padding: 1.5rem 0;
-  }
+@media (max-width: 575px) {
   #about-me .intro {
-    padding: 0 1.5rem;
+    margin-top: -2.5rem;
   }
   #about-me .intro h2 {
-    width: 80%;
-  }
-  #about-me .intro .gravatar {
-    float: right;
-    position: static;
+    text-align: right;
+    width: 100%;
   }
   #about-me .resume {
     margin-top: 1.5rem;
@@ -290,7 +304,7 @@ a.external::after {
 #skills .item {
   color: #fff;
 }
-#skills .item:nth-child(n+4) {
+#skills .item:nth-child(n+5) {
   margin-top: 1.5rem;
 }
 #skills header {
@@ -302,8 +316,8 @@ a.external::after {
   text-align: right;
 }
 #skills header .logo {
-  max-width: 5rem;
-  max-height: 5rem;
+  width: 5rem;
+  height: 5rem;
   margin-right: 1rem;
   position: absolute;
   top: 1rem;
@@ -324,8 +338,8 @@ a.external::after {
   padding: 1rem;
 }
 @media (max-width: 575px) {
-  #skills {
-    padding-bottom: 0;
+  #skills .item:nth-child(n+3) {
+    margin-top: 0.75rem;
   }
 }
 #power {
@@ -361,17 +375,13 @@ a.external::after {
   max-width: 100%;
   height: auto;
 }
-#works .gamepop.active,
-#works .xline.active,
-#works .gamepop.left,
-#works .xline.left,
-#works .gamepop.right,
-#works .xline.right {
-  display: flex;
+#works .labels {
+  text-align: center;
 }
-#works .gamepop article,
-#works .xline article {
-  flex: 1;
+#works .labels .badge {
+  background-color: #e67e22;
+  font-size: 0.75rem;
+  font-weight: normal;
 }
 #works .gamepop h2,
 #works .xline h2 {
@@ -379,8 +389,8 @@ a.external::after {
 }
 #works .gamepop ul,
 #works .xline ul {
-  font-size: 1.5em;
-  line-height: 2em;
+  font-size: 1.25em;
+  line-height: 2;
 }
 #works .gamepop .right {
   order: 3;
@@ -415,12 +425,11 @@ a.external::after {
 #works .findx p:last-child {
   margin-bottom: 0;
 }
-#works .labels {
-  text-align: center;
+#works .meart {
+  flex-direction: column;
 }
-#works .labels .label {
-  background-color: #e67e22;
-  font-weight: normal;
+#works .meart h2 {
+  text-align: center;
 }
 @media (max-width: 575px) {
   #works .item {
@@ -436,31 +445,11 @@ a.external::after {
   #works .item h2 {
     margin-top: 0;
   }
-  #works .gamepop.active,
-  #works .xline.active,
-  #works .gamepop.left,
-  #works .xline.left,
-  #works .gamepop.right,
-  #works .xline.right {
-    display: block;
-  }
   #works .gamepop ul,
   #works .xline ul {
     font-size: 1em;
   }
-  #works .gamepop .img {
-    display: inline-block;
-    width: 44%;
-    margin-left: 5%;
-    vertical-align: top;
-  }
-  #works .gamepop .img.right {
-    margin-left: 0;
-    margin-right: 5%;
-  }
-  #works .gamepop article {
-    width: 100%;
-  }
+  #works .gamepop article,
   #works .xline article {
     padding-left: 0;
   }
@@ -578,6 +567,9 @@ a.external::after {
   #blog {
     padding-bottom: 1.5rem;
   }
+  #blog .btn {
+    width: 100%;
+  }
   #blog-grid li {
     border: none;
   }
@@ -586,9 +578,6 @@ a.external::after {
   }
   #blog-grid .blog-link {
     padding: 0 0.375rem;
-  }
-  #blog-grid .btn {
-    width: 100%;
   }
 }
 #contact {
@@ -644,7 +633,7 @@ a.external::after {
   right: 2em;
   bottom: 1.5rem;
 }
-@media (max-width: 375px) {
+@media (max-width: 575px) {
   #footer .top-button {
     position: static;
   }

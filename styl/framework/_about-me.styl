@@ -70,19 +70,15 @@
       margin-top: $gap
       padding: 6px $gap
 
-@media (max-width: 432px)
+@media (max-width: $xs-max-width)
   #about-me
-    padding: $gap 0
 
     .intro
-      padding: 0 $gap
+      margin-top -2.5rem
 
       h2
-        width: 80%
-      
-      .gravatar
-        float: right
-        position: static
+        text-align right
+        width: 100%
 
     .resume
       margin-top: $gap

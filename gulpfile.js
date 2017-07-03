@@ -15,6 +15,7 @@ const rename = require('gulp-rename');
 
 const repoExp = /node_modules\/([\w\-\.]+)\/(dist\/|build\/)?/g;
 const CDN = require('./cdn.json');
+const pkg = require('./package.json');
 
 gulp.task('image', () => {
   gulp.src('src/img/**')
@@ -47,12 +48,14 @@ gulp.task('webpack', () => {
 });
 
 gulp.task('html', () => {
+  let time = Date.now();
   return gulp.src('index.dev.html')
     .pipe(replace(repoExp, (match, repo) => {
       return CDN[repo];
     }))
     .pipe(replace('js/main.js', 'js/main.min.js'))
     .pipe(replace('css/screen.css', 'css/screen.min.css'))
+    .pipe(replace('{{version}}', `${pkg.version}.${time}`))
     .pipe(htmlMin({
       collapseWhitespace: true,
       removeComments: true,
