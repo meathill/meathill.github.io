@@ -4,5 +4,5 @@
 
 module.exports = {
   DEBUG: true,
-  BLOG_URL: JSON.stringify('http://blog.meathill.com/feed')
+  BLOG_URL: JSON.stringify('https://blog.meathill.com/feed')
 };
