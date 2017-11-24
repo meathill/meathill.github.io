@@ -132,6 +132,11 @@ a.external::after {
   justify-content: center;
   align-items: center;
 }
+#main-slide .carousel-item.active,
+#main-slide .carousel-item-prev,
+#main-slide .carousel-item-next {
+  display: flex;
+}
 #main-slide h1 {
   font-size: 4em;
   margin: 2rem 0 1rem;

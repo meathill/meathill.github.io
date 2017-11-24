@@ -7,14 +7,16 @@ const webpack = require('webpack');
 const dev = require('./config/dev');
 
 module.exports = {
-  entry: './main.js',
+  entry: {
+    main: './main.js',
+  },
   context: path.resolve(__dirname, 'app'),
   output: {
     path: path.resolve(__dirname, 'js'),
     filename: '[name].js'
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,

@@ -8,7 +8,6 @@ const stylus = require('gulp-stylus');
 const cleanCSS = require('gulp-clean-css');
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
-const uglify = require('gulp-uglify');
 const htmlMin = require('gulp-htmlmin');
 const replace = require('gulp-replace');
 const rename = require('gulp-rename');
@@ -40,7 +39,6 @@ gulp.task('stylus', () => {
 gulp.task('webpack', () => {
   return gulp.src('app/main.js')
     .pipe(webpackStream(require('./webpack.config.prod'), webpack))
-    .pipe(uglify())
     .pipe(rename({
       suffix: '.min'
     }))

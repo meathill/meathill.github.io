@@ -3,12 +3,15 @@
  */
 
 const webpack = require('webpack');
+const uglify = require('uglifyjs-webpack-plugin');
 const production = require('./config/production');
 const config = require('./webpack.config');
 
-config.devtool = config.watch = false;
+//config.devtool = 'source-map';
+config.watch = false;
 config.plugins = [
-  new webpack.DefinePlugin(production)
+  new webpack.DefinePlugin(production),
+  new uglify(),
 ];
 
 module.exports = config;
