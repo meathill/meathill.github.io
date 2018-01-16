@@ -3,7 +3,7 @@
  */
 
 const webpack = require('webpack');
-const uglify = require('uglifyjs-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const production = require('./config/production');
 const config = require('./webpack.config');
 
@@ -11,7 +11,15 @@ const config = require('./webpack.config');
 config.watch = false;
 config.plugins = [
   new webpack.DefinePlugin(production),
-  new uglify(),
+  new UglifyJSPlugin({
+    parallel: true,
+    uglifyOptions: {
+      compress: {
+        warnings: false,
+        drop_console: true,
+      },
+    },
+  }),
 ];
 
 module.exports = config;

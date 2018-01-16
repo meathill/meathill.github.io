@@ -259,7 +259,7 @@ a.external::after {
   padding-bottom: 1.5rem;
 }
 #about-me .resume li + li {
-  margin-top: 0.75rem;
+  margin-top: 0.5rem;
 }
 #about-me .resume i {
   background-color: #ff851b;
