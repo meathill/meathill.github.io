@@ -13,25 +13,26 @@ module.exports = {
   context: path.resolve(__dirname, 'app'),
   output: {
     path: path.resolve(__dirname, 'js'),
-    filename: '[name].js'
+    filename: '[name].js',
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        use: 'babel-loader',
       },
       {
         test: /\.hbs$/,
-        loader: 'handlebars-loader'
-      }
-    ]
+        use: 'handlebars-loader',
+      },
+    ],
   },
   devtool: 'source-map',
   externals: {
     'jquery': 'jQuery'
   },
+  mode: 'development',
   watch: true,
   watchOptions: {
     poll: 1000,
@@ -39,5 +40,5 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin(dev)
-  ]
+  ],
 };

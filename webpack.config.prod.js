@@ -3,23 +3,14 @@
  */
 
 const webpack = require('webpack');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const production = require('./config/production');
 const config = require('./webpack.config');
 
-//config.devtool = 'source-map';
+config.devtool = 'source-map';
+config.mode = 'production';
 config.watch = false;
 config.plugins = [
   new webpack.DefinePlugin(production),
-  new UglifyJSPlugin({
-    parallel: true,
-    uglifyOptions: {
-      compress: {
-        warnings: false,
-        drop_console: true,
-      },
-    },
-  }),
 ];
 
 module.exports = config;
