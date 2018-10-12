@@ -63,4 +63,4 @@ gulp.task('html', () => {
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('default', ['stylus', 'webpack', 'html']);
+gulp.task('default', gulp.parallel('stylus', 'webpack', 'html'));
