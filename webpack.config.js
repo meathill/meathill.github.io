@@ -7,13 +7,8 @@ const webpack = require('webpack');
 const dev = require('./config/dev');
 
 module.exports = {
-  entry: {
-    main: './main.js',
-  },
-  context: path.resolve(__dirname, 'app'),
   output: {
-    path: path.resolve(__dirname, 'js'),
-    filename: '[name].js',
+    path: path.resolve(__dirname, 'docs'),
   },
   module: {
     rules: [
@@ -33,11 +28,6 @@ module.exports = {
     'jquery': 'jQuery'
   },
   mode: 'development',
-  watch: true,
-  watchOptions: {
-    poll: 1000,
-    ignored: /node_modules|styl|css|js/
-  },
   plugins: [
     new webpack.DefinePlugin(dev)
   ],

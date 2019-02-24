@@ -7,7 +7,6 @@ const imageMin = require('gulp-imagemin');
 const stylus = require('gulp-stylus');
 const cleanCSS = require('gulp-clean-css');
 const webpack = require('webpack');
-const webpackStream = require('webpack-stream');
 const htmlMin = require('gulp-htmlmin');
 const replace = require('gulp-replace');
 const rename = require('gulp-rename');
