@@ -1,8 +1,9 @@
 /**
  * Created by meathill on 14/12/3.
  */
+import '../styl/screen.styl';
 import $ from 'jquery';
-import Blog from './Blog';
+import Blog from './app/Blog';
 
 let topbar = $('#top-bar');
 $(window).on('scroll', function () {

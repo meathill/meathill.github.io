@@ -1,9 +1,14 @@
 {
   "presets": [
-    ["@babel/preset-env", {
-      "targets": {
-        "browsers": [">=5%"]
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "browsers": ">=2%"
+        },
+        "useBuiltIns": "usage",
+        "corejs": 3
       }
-    }]
+    ]
   ]
 }

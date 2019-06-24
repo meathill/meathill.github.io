@@ -3,8 +3,9 @@
  */
 
 const path = require('path');
-const webpack = require('webpack');
-const dev = require('./config/dev');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const pkg = require('./package');
+const time = Date.now();
 
 module.exports = {
   output: {
@@ -18,17 +19,49 @@ module.exports = {
         use: 'babel-loader',
       },
       {
+        test: /\.pug$/,
+        loader: 'pug-loader',
+      },
+      {
         test: /\.hbs$/,
         use: 'handlebars-loader',
       },
+      {
+        test: /\.styl(us)?$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'stylus-loader',
+        ],
+      },
+      {
+        test: /\.(png|jpg|gif|svg|woff2|eot|woff|ttf|ico)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets',
+            },
+          },
+        ],
+      },
     ],
   },
+  mode: 'development',
   devtool: 'source-map',
   externals: {
-    'jquery': 'jQuery'
+    'jquery': 'jQuery',
   },
-  mode: 'development',
   plugins: [
-    new webpack.DefinePlugin(dev)
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, './index.pug'),
+      templateParameters: {
+        version: `${pkg.version}.${time}`,
+      }
+    }),
   ],
+  devServer: {
+    port: 8080,
+  },
 };

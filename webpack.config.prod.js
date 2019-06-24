@@ -1,16 +1,57 @@
 /**
  * Created by meathill on 2017/7/1.
  */
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const {defaults} = require('lodash');
+const base = require('./webpack.config');
 
-const webpack = require('webpack');
-const production = require('./config/production');
-const config = require('./webpack.config');
+module.exports = defaults({
+  mode: 'production',
+  devtool: false,
 
-config.devtool = 'source-map';
-config.mode = 'production';
-config.watch = false;
-config.plugins = [
-  new webpack.DefinePlugin(production),
-];
+  module: {
+    rules: base.module.rules.map(rule => {
+      if (!rule.test.test('a.styl')) {
+        return rule;
+      }
+      rule.use[0] = MiniCssExtractPlugin.loader;
+      return rule;
+    }),
+  },
 
-module.exports = config;
+  plugins: [new CleanWebpackPlugin()].concat(
+    base.plugins,
+    [
+      new MiniCssExtractPlugin({
+        filename: 'screen.css',
+      }),
+      new CopyWebpackPlugin([
+        {
+          from: 'ads.txt',
+        },
+      ]),
+    ]
+  ),
+
+  optimization: {
+    minimizer: [
+      new OptimizeCSSAssetsPlugin(),
+      new TerserPlugin({
+        cache: true,
+        parallel: true,
+        exclude: /node_modules/,
+        terserOptions: {
+          ecma: 7,
+          toplevel: true,
+          compress: {
+            drop_console: true,
+          },
+        },
+      }),
+    ],
+  },
+}, base);

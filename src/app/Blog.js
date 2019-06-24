@@ -2,7 +2,7 @@
  * Created by meathill on 14/12/9.
  */
 import $ from 'jquery';
-import template from '../template/blog.hbs';
+import template from '../../template/blog.pug';
 
 const KEY = 'meathill-blogs';
 const KEY_ID = 'meathill-latest';
@@ -27,7 +27,7 @@ export default class Blog {
   }
 
   fetch() {
-    $.get(BLOG_URL, {
+    $.get('https://blog.meathill.com/feed', {
       dataType: 'xml'
     })
       .then(this.onSuccess.bind(this))
