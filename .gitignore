@@ -8,6 +8,7 @@ src/css
 css/*.map
 js/main.js
 js/main.js.map
+docs/
 
 # repo
 node_modules/

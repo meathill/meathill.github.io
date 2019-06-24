@@ -1,7 +1,6 @@
 /**
  * Created by meathill on 2017/7/1.
  */
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -23,8 +22,7 @@ module.exports = defaults({
     }),
   },
 
-  plugins: [new CleanWebpackPlugin()].concat(
-    base.plugins,
+  plugins: base.plugins.concat(
     [
       new MiniCssExtractPlugin({
         filename: 'screen.css',

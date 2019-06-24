@@ -9,7 +9,7 @@ const time = Date.now();
 
 module.exports = {
   output: {
-    path: path.resolve(__dirname, 'docs'),
+    path: path.resolve(__dirname, './'),
   },
   module: {
     rules: [
