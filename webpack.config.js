@@ -23,10 +23,6 @@ module.exports = {
         loader: 'pug-loader',
       },
       {
-        test: /\.hbs$/,
-        use: 'handlebars-loader',
-      },
-      {
         test: /\.styl(us)?$/,
         use: [
           'style-loader',
