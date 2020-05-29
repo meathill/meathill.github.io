@@ -27,11 +27,13 @@ module.exports = defaults({
       new MiniCssExtractPlugin({
         filename: 'screen.css',
       }),
-      new CopyWebpackPlugin([
-        {
-          from: 'ads.txt',
-        },
-      ]),
+      new CopyWebpackPlugin({
+        patterns: [
+          {
+            from: 'ads.txt',
+          },
+        ],
+      }),
     ]
   ),
 
