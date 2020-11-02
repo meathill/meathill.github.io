@@ -10,6 +10,7 @@ const time = Date.now();
 module.exports = {
   output: {
     path: path.resolve(__dirname, './'),
+    publicPath: "/",
   },
   module: {
     rules: [

@@ -27,11 +27,10 @@ export default class Blog {
   }
 
   fetch() {
-    $.get('https://blog.meathill.com/feed', {
-      dataType: 'xml'
-    })
+    fetch('https://blog.meathill.com/feed')
+      .then(response => response.text())
       .then(this.onSuccess.bind(this))
-      .catch(Blog.onError)
+      .catch(Blog.onError);
   }
 
   parse(xml) {

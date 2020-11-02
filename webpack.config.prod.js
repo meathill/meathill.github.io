@@ -41,8 +41,6 @@ module.exports = defaults({
     minimizer: [
       new OptimizeCSSAssetsPlugin(),
       new TerserPlugin({
-        cache: true,
-        parallel: true,
         exclude: /node_modules/,
         terserOptions: {
           ecma: 7,
