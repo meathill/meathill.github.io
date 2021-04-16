@@ -3,7 +3,7 @@
  */
 const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const {defaults} = require('lodash');
 const base = require('./webpack.config');
@@ -38,8 +38,9 @@ module.exports = defaults({
   ),
 
   optimization: {
+    minimize: true,
     minimizer: [
-      new OptimizeCSSAssetsPlugin(),
+      new CssMinimizerPlugin(),
       new TerserPlugin({
         exclude: /node_modules/,
         terserOptions: {
