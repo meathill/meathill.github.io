@@ -5,12 +5,17 @@ import '../styl/screen.styl';
 import $ from 'jquery';
 import Blog from './app/Blog';
 
+const {forEach} = Array.prototype;
+
 let topbar = $('#top-bar');
-$(window).on('scroll', function () {
-  let offset = document.body.scrollTop;
-  topbar.toggleClass('bg-inverse', offset > 0);
+const points = [...document.querySelectorAll('body > div[id]')].map(item => {
+  return item.getBoundingClientRect().top;
+});
+window.addEventListener('scroll', function () {
+  const {scrollY} = window;
+  topbar.toggleClass('bg-dark', scrollY > 10);
   for (let i = points.length - 1; i > -1; i--) {
-    if (points[i] - offset < 73 && points[i] - offset > -33) { // top-bar高度是53，给20px适配
+    if (points[i] - scrollY < 73 && points[i] - scrollY > -33) { // top-bar高度是53，给20px适配
       topbar.find('li').eq(i).addClass('active')
         .siblings().removeClass('active');
       break;
@@ -19,13 +24,9 @@ $(window).on('scroll', function () {
 });
 
 // way points
-let points = [];
-$('a[name]').each(function () {
-  points.push($(this).offset().top);
-});
 
 // blog
-let blog = new Blog({
+const blog = new Blog({
   el: '#blog-grid'
 });
 

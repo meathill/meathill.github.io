@@ -5,30 +5,27 @@ html
     meta(name='viewport' content='user-scalable=no,initial-scale=1,width=device-width')
     meta(name='format-detection' content='telephone=no')
     //  web meta begin
-    meta(http-equiv='X-UA-Compatible' content='IE=edge,chrome=1')
     //  优先使用 IE 最新版本和 Chrome
-    meta(name='description' content='你好，我是Meathill，全栈工程师，产品经理。有家有口有狗，爱吃爱玩爱旅游。')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge,chrome=1')
     //  页面描述
-    meta(name='keywords' content='meathill,肉山,个人主页,简历')
+    meta(name='description' content='你好，我是Meathill，全栈工程师，产品经理。有家有口有狗，爱吃爱玩爱旅游。')
     //  页面关键词
+    meta(name='keywords' content='meathill,肉山,个人主页,简历')
     meta(name='author' content='Meathill <meathill@gmail.com>')
-    meta(name='robots' content='index,follow')
     //  搜索引擎抓取
+    meta(name='robots' content='index,follow')
     //  web meta end
     link(
       rel="stylesheet",
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css",
-      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1",
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css",
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We",
       crossorigin="anonymous"
-    )
-    link(
-      rel='stylesheet',
-      href='https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css',
     )
     link(rel='shortcut icon' type='image/png' href=require('./img/meathill.png'))
     title 你好，我是Meathill。
   body
-    nav.navbar.navbar-expand-md.fixed-top#top-bar(role='navigation')
+    a(name="hello")
+    nav.navbar.navbar-expand-md.navbar-dark.fixed-top#top-bar(role='navigation')
       .container
         button.navbar-toggler.navbar-toggler-right.collapsed(type='button' data-toggle='collapse' data-target='#top-bar-inner' aria-controls='top-bar-inner' aria-expanded='false' aria-label='收放导航')
           i.fa.fa-bars
@@ -36,7 +33,7 @@ html
           span.sr-only 导航
         a.navbar-brand(href='/') Meathill
         .collapse.navbar-collapse#top-bar-inner
-          ul.navbar-nav.ml-auto
+          ul.navbar-nav.ms-auto
             li.nav-item.active
               a.nav-link(href='#main-slide')
                 | 你好
@@ -45,8 +42,6 @@ html
               a.nav-link(href='#about-me') 自我介绍
             li.nav-item
               a.nav-link(href='#skills') 技能
-            li.nav-item
-              a.nav-link(href='#power') 特长
             li.nav-item
               a.nav-link(href='#works') 作品集
             li.nav-item.blog
@@ -74,16 +69,16 @@ html
               i.fa.fa-linkedin
         .carousel-item.slide-2
           h2 我正努力分享我的知识
-          p.lead 今年目标：肉山小课堂线下版
-          p 虽然无法养家糊口，也不耽误我把只是技能分享给大家。我每周四都会在广州奥体附近的 Coffee ForU，期待大家光临。
+          p.lead 近期目标：肉山全栈小课堂
+          p 未来是视频的时代，很多知识都会用视频的形式重新发明一遍。我希望也能贡献一部分。我每个工作日都会在B站5126601直播，欢迎光临
           p.mt-3
-            a.btn.btn-secondary.btn-lg(href='https://segmentfault.com/u/meathill/lives?type=started' target='_blank')
-              img(src='https://static.segmentfault.com/v-5954c7a4/global/img/logo-b.svg')
-              | 已开课程
+            a.btn.btn-secondary.btn-lg(href='https://space.bilibili.com/7409098' target='_blank')
+              i.fas.fa-video.me-2
+              | B 站视频
 
             a.btn.btn-info.btn-lg(href='mailto:meathill@gmail.com')
               i.fa.fa-envelope
-              |  您希望看什么课程？
+              |  您希望看什么内容？
       a.carousel-control-prev(href='#main-slide' role='button' data-slide='prev')
         span.carousel-control-prev-icon(aria-hidden='true')
         span.sr-only 上一张
@@ -102,7 +97,7 @@ html
             p 这个网站用来自我介绍，兼列举以往的作品和一时兴起建立的项目，大部分都已开源，我也很愿意分享它们。我对未来的设计是，成为一名 Freelancer，在东南亚的某个海岛上，SOHO、写书、编程、游泳、遛狗。
             p
               | 我的个人生活和开发经验，请移步
-              a(href='https://blog.meathill.com') https://blog.meathill.com/
+              a.ms-1(href='https://blog.meathill.com') https://blog.meathill.com/
               | 。
             .weibo
               a(href='https://weibo.com/meathill' target='_blank')
@@ -192,17 +187,16 @@ html
             h3 Node.js
           .col-md-3.col-6.item
             header
-              img.logo.img-thumbnail(src='src/img/flash.png')
+              img.logo.img-thumbnail(src='src/img/wxapp.png')
               i.fa.fa-star
               i.fa.fa-star
               i.fa.fa-star
               i.fa.fa-star
               i.fa.fa-star
-            h3 Flash
+            h3 小程序
           .col-md-3.col-6.item
             header
               img.logo.img-thumbnail(src='src/img/pm.jpg')
-              i.fa.fa-star
               i.fa.fa-star
               i.fa.fa-star
               i.fa.fa-star
@@ -213,35 +207,7 @@ html
               i.fa.fa-star
               i.fa.fa-star
               i.fa.fa-star-half-o
-            h3 服务器运维
-    #power.py-4
-      .page-header
-        h2 特长
-      .container
-        .row
-          .col-md-3.col-6.col-12
-            h3 产品思维
-            article
-              p 前端是距离用户最近的岗位，对我来说，用户体验非常重要。
-              p 我很擅长在没有独立产品经理的情况下，独立完成工作。当然，我也非常乐意与优秀的产品经理合作。
-          .col-md-3.col-6.col-12
-            h3 工程优化
-            article
-              p 开发不是码代码，码代码只是必不可少的一部分。
-              p 我会将各种体系融入开发当中，提高代码结构的强度、扩大适用范围、增强可维护性。
-              p 只有不懂技术的人，才会觉得程序员是青春饭。
-          .col-md-3.col-6.col-12
-            h3 吸纳新技术
-            article
-              p 从爆炸的信息中找出于我有益的，摒除掉对我没用的，也是重要的学习能力。
-              p 我求知欲旺盛，喜欢学习，更喜欢应用到工作当中。
-              p 如果你也是这样欢迎与我交流心得。
-          .col-md-3.col-6.col-12
-            h3 能干会玩
-            article
-              p 人身苦短，及时行乐哟~
-              p 我的爱好非常广泛，打篮球、游泳、旅游、看电影、读小说、打游戏，不一而足。
-              p 游戏里文明、DND、山口山，都是我的最爱。目前主玩炉石。
+            h3 Linux
     #works.py-4
       .page-header
         h2 作品集
@@ -252,7 +218,7 @@ html
               li
                 a(href="https://segmentfault.com/u/meathill/lives?type=started") 我的视频讲座
               li
-                a(href="https://search.bilibili.com/all?keyword=meathill") 前端尬聊会
+                a(href="https://search.bilibili.com/all?keyword=meathill") 肉山全栈小课堂
               li
                 a(href="https://github.com/meathill") GitHub
           .col-12.col-sm-6
@@ -297,14 +263,18 @@ html
           i.fa.fa-github
           |  源代码
 
-      a.top-button(href='#hello')
+      a.top-button(href='#hello', title="Top")
         i.fa.fa-chevron-up
-        |  TOP
-    script(
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js",
+
+    link(
+      rel='stylesheet',
+      href='https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css',
     )
     script(
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js",
-      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx",
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js",
+    )
+    script(
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js",
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj",
       crossorigin="anonymous",
     )
