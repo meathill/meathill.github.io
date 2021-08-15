@@ -48,10 +48,21 @@ html
               a.nav-link(href='#blog') 近期博文
             li.nav-item
               a.nav-link(href='https://weibo.com/meathill/' target='_blank') 联系我
-    #main-slide.carousel.slide(data-ride='carousel' data-interval='8000')
-      ol.carousel-indicators
-        li.active(data-target='#main-slide' data-slide-to='0')
-        li(data-target='#main-slide' data-slide-to='1')
+    #main-slide.carousel.slide(data-bs-ride='carousel' data-interval='8000')
+      .carousel-indicators
+        button.active(
+          type="button",
+          data-bs-target='#main-slide',
+          data-bs-slide-to='0',
+          aria-current="true",
+          aria-label="hello, I'm Meathill",
+        )
+        button(
+          type="button",
+          data-bs-target='#main-slide',
+          data-bs-slide-to='1',
+          aria-label="视频",
+        )
       .carousel-inner(role='listbox')
         .carousel-item.slide-1.active
           img.img-circle.img-thumbnail(src='https://qiniu.meathill.com/gravatar.jpg')
@@ -72,19 +83,28 @@ html
           p.lead 近期目标：肉山全栈小课堂
           p 未来是视频的时代，很多知识都会用视频的形式重新发明一遍。我希望也能贡献一部分。我每个工作日都会在B站5126601直播，欢迎光临
           p.mt-3
-            a.btn.btn-secondary.btn-lg(href='https://space.bilibili.com/7409098' target='_blank')
-              i.fas.fa-video.me-2
+            a.btn.btn-primary.btn-lg(href='https://space.bilibili.com/7409098' target='_blank')
+              i.fa.fa-video-camera.me-2
               | B 站视频
 
             a.btn.btn-info.btn-lg(href='mailto:meathill@gmail.com')
               i.fa.fa-envelope
               |  您希望看什么内容？
-      a.carousel-control-prev(href='#main-slide' role='button' data-slide='prev')
+      button.carousel-control-prev(
+        type="button",
+        data-bs-target='#main-slide',
+        data-bs-slide='prev',
+      )
         span.carousel-control-prev-icon(aria-hidden='true')
         span.sr-only 上一张
-      a.carousel-control-next(href='#main-slide' role='button' data-slide='next')
+      button.carousel-control-next(
+        type="button",
+        data-bs-target='#main-slide',
+        data-bs-slide='next',
+      )
         span.carousel-control-next-icon(aria-hidden='true')
         span.sr-only 下一张
+
     #about-me
       .container.py-4
         .row
