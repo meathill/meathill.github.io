@@ -44,8 +44,12 @@ export default class Blog {
       element = element.firstElementChild;
       while (element) {
         let attr = element.namespaceURI && element.tagName.match(tagReg) > 1 ? element.tagName.match(tagReg)[1] : element.tagName;
-        item[attr] = element.textContent.replace(/<a.*>.*?<\/a>/, '');
+        item[attr.toLowerCase()] = element.textContent.replace(/<a.*>.*?<\/a>/, '');
         element = element.nextElementSibling;
+      }
+      // hard fix
+      if (!item.link && item.comments) {
+        item.link = item.comments.replace(/#respond$/, '');
       }
       let guid = parseInt(item.guid.match(guidReg)[1]);
       if (index === 0) {
@@ -82,7 +86,7 @@ export default class Blog {
       return;
     }
     list = list.map(item => {
-      item.thumbnail = item.thumbnail.replace('//blog.meathill.com/', '//qiniu.meathill.com');
+      item.thumbnail = item.thumbnail ? item.thumbnail.replace('//blog.meathill.com/', '//qiniu.meathill.com') : '';
       return item;
     });
     localStorage.setItem(KEY, store);

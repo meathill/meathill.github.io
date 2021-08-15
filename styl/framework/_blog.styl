@@ -12,58 +12,63 @@
   margin-bottom: $gap
   padding: 0
 
-  li
-    background-color: lighten($CARROT, 10%)
-    border-right: 2px solid $CARROT
-    list-style: none
-    min-height: 200px
-    padding-top 1rem
+.blog-item
+  background-color: lighten($CARROT, 10%)
+  border-right: 2px solid $CARROT
+  list-style: none
+  min-height: 200px
+  padding-top 1rem
 
-    &:nth-child(-n+3)
-      border-bottom: 2px solid $CARROT
+  &:nth-child(-n+3)
+    border-bottom: 2px solid $CARROT
 
-    &:nth-child(3n)
-      border-right: none
+  &:nth-child(3n)
+    border-right: none
+
+  h3
+    border-bottom: 1px solid darken($CARROT, 10%)
+    font-size 1.5rem
+    margin: 0 0 $gap-s
+    padding-bottom: $gap-s
+
+  &.has-thumbnail
+    background no-repeat center center
+    background-size cover
+    position: relative
 
     h3
-      border-bottom: 1px solid darken($CARROT, 10%)
-      font-size 1.5rem
-      margin: 0 0 $gap-s
-      padding-bottom: $gap-s
+      background-color: rgba(0, 0, 0, .6)
+      color: white
+      line-height: 1.5em
+      position: absolute
+      left: 0
+      right: 0
+      bottom: 0
+      margin-bottom: 0
+      padding-bottom: 0
+      text-align: center
 
-    &.has-thumbnail
-      background no-repeat center center
-      background-size cover
-      position: relative
+    a
+      color: white
 
-      h3
-        background-color: rgba(0, 0, 0, .6)
-        color: white
-        line-height: 1.5em
-        position: absolute
-        left: 0
-        right: 0
-        bottom: 0
-        margin-bottom: 0
-        padding-bottom: 0
-        text-align: center
+      &:hover
+        color: silver
 
-      a
-        color: white
+  &.no-thumbnail
+    display: flex
+    flex-direction column
+    justify-content: center
 
-        &:hover
-          color: silver
+    article:emtpy
+      display: none
 
-    &.no-thumbnail
-      flex-direction column
+    a
+      color: darken($CARROT, 25%)
 
-      a
-        color: darken($CARROT, 25%)
-
-        &:hover
-          background-color: rgba(0, 0, 0, 0.1)
-          color: darken($CARROT, 32%)
-          text-decoration: none
+      &:hover
+        background-color: rgba(0, 0, 0, 0.1)
+        color: darken($CARROT, 32%)
+        text-decoration: none
 
 @media (max-width: 432px)
   #blog

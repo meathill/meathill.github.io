@@ -1,12 +1,12 @@
 each item in list
   if item.thumbnail
-    li.item.has-thumbnail.col-md-4.col-sm-6.col-12(
+    .blog-item.has-thumbnail.col-md-4.col-sm-6.col-12(
       style='background-image: url(' + item.thumbnail + ')',
     )
       h3
         a(href=item.link)= item.title
   else
-    li.item.no-thumbnail.col-md-4.col-sm-6.col-12
+    .blog-item.no-thumbnail.col-md-4.col-sm-6.col-12
       h3
         a(href=item.link)= item.title
       article= item.description
