@@ -35,7 +35,8 @@ module.exports = defaults({
           },
         ],
       }),
-    ]
+      new LazyloadWebpackPlugin(),
+    ],
   ),
 
   optimization: {
@@ -45,7 +46,7 @@ module.exports = defaults({
       new TerserPlugin({
         exclude: /node_modules/,
         terserOptions: {
-          ecma: 7,
+          ecma: 9,
           toplevel: true,
           compress: {
             drop_console: true,

@@ -7,8 +7,6 @@ import template from '../../template/blog.pug';
 const KEY = 'meathill-blogs';
 const KEY_ID = 'meathill-latest';
 
-/* global BLOG_URL */
-
 export default class Blog {
   constructor(options) {
     this.$el = $(options.el);

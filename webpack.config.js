@@ -11,6 +11,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './'),
     publicPath: "/",
+    assetModuleFilename: 'assets/[name][ext]',
   },
   module: {
     rules: [
@@ -33,16 +34,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif|svg|woff2|eot|woff|ttf|ico)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'assets',
-              esModule: false,
-            },
-          },
-        ],
+        type: 'asset/resource',
       },
     ],
   },

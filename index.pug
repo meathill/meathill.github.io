@@ -17,8 +17,8 @@ html
     //  web meta end
     link(
       rel="stylesheet",
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css",
-      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We",
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css",
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3",
       crossorigin="anonymous"
     )
     link(rel='shortcut icon' type='image/png' href=require('./img/meathill.png'))
@@ -65,7 +65,11 @@ html
         )
       .carousel-inner(role='listbox')
         .carousel-item.slide-1.active
-          img.img-circle.img-thumbnail(src='https://qiniu.meathill.com/gravatar.jpg')
+          img.img-circle.img-thumbnail(
+            src='https://qiniu.meathill.com/gravatar.jpg',
+            alt='Meathill',
+            loading="eager",
+          )
           h1 你好，我是 Meathill
           p.lead 全栈工程师，产品经理
           p 有家有口有狗，爱吃爱玩爱旅游
@@ -109,7 +113,10 @@ html
       .container.py-4
         .row
           .col-md-2.col-5
-            img.img-circle.gravatar.img-thumbnail(src='https://avatars0.githubusercontent.com/u/437409?s=460&v=4')
+            img.img-circle.gravatar.img-thumbnail(
+              src='https://avatars0.githubusercontent.com/u/437409?s=460&v=4',
+              alt="Meathill",
+            )
           .col-md-6.col-12.intro
             h2 宅肉山
             p 爱学习，爱吐槽，爱创造，爱分享。
@@ -121,7 +128,10 @@ html
               | 。
             .weibo
               a(href='https://weibo.com/meathill' target='_blank')
-                img(src='https://service.t.sina.com.cn/widget/qmd/1401537047/a4b56a6a/1.png')
+                img(
+                  src='https://service.t.sina.com.cn/widget/qmd/1401537047/a4b56a6a/1.png',
+                  alt="weibo",
+                )
           .col-md-4.col-12
             ul.resume
               li
@@ -164,7 +174,10 @@ html
         .row
           .col-md-3.col-6.item
             header
-              img.logo.img-thumbnail(src='src/img/html5.svg')
+              img.logo.img-thumbnail(
+                src='src/img/html5.svg',
+                alt="HTML",
+              )
               i.fa.fa-star
               i.fa.fa-star
               i.fa.fa-star
@@ -173,7 +186,10 @@ html
             h3 HTML
           .col-md-3.col-6.item
             header
-              img.logo.img-thumbnail(src='src/img/css3.png')
+              img.logo.img-thumbnail(
+                src='src/img/css3.png',
+                alt='CSS',
+              )
               i.fa.fa-star
               i.fa.fa-star
               i.fa.fa-star
@@ -182,7 +198,10 @@ html
             h3 CSS
           .col-md-3.col-6.item
             header
-              img.logo.img-thumbnail(src='src/img/js.png')
+              img.logo.img-thumbnail(
+                src='src/img/js.png',
+                alt='JavaScript',
+              )
               i.fa.fa-star
               i.fa.fa-star
               i.fa.fa-star
@@ -191,7 +210,10 @@ html
             h3 JavaScript
           .col-md-3.col-6.item
             header
-              img.logo.img-thumbnail(src='src/img/php.png')
+              img.logo.img-thumbnail(
+                src='src/img/php.png',
+                alt='PHP',
+              )
               i.fa.fa-star
               i.fa.fa-star
               i.fa.fa-star
@@ -199,7 +221,10 @@ html
             h3 PHP
           .col-md-3.col-6.item
             header
-              img.logo.img-thumbnail(src='src/img/nodejs.png')
+              img.logo.img-thumbnail(
+                src='src/img/nodejs.png',
+                alt='Node.js',
+              )
               i.fa.fa-star
               i.fa.fa-star
               i.fa.fa-star
@@ -207,7 +232,10 @@ html
             h3 Node.js
           .col-md-3.col-6.item
             header
-              img.logo.img-thumbnail(src='src/img/wxapp.png')
+              img.logo.img-thumbnail(
+                src='src/img/wxapp.png',
+                alt='微信小程序',
+              )
               i.fa.fa-star
               i.fa.fa-star
               i.fa.fa-star
@@ -216,14 +244,20 @@ html
             h3 小程序
           .col-md-3.col-6.item
             header
-              img.logo.img-thumbnail(src='src/img/pm.jpg')
+              img.logo.img-thumbnail(
+                src='src/img/pm.jpg',
+                alt='产品经理',
+              )
               i.fa.fa-star
               i.fa.fa-star
               i.fa.fa-star
             h3 产品经理
           .col-md-3.col-6.item
             header
-              img.logo.img-thumbnail(src='src/img/linux.jpg')
+              img.logo.img-thumbnail(
+                src='src/img/linux.jpg',
+                alt='Linux',
+              )
               i.fa.fa-star
               i.fa.fa-star
               i.fa.fa-star-half-o
@@ -252,7 +286,7 @@ html
               li
                 a(href="https://meathill.com/gitbook-nuxt-generate-static-site/") 使用 Nuxt.js 发布纯静态网站
               li
-                a(href="https://meathill-lecture.github.io/gitbook-path-to-advanced-vuer/") 走出 Vue 新手村
+                a(href="https://meathill.com/gitbook-path-to-advanced-vuer/") 走出 Vue 新手村
     #blog.py-4
       .page-header
         h2 近期博文
@@ -295,6 +329,6 @@ html
     )
     script(
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js",
-      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj",
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p",
       crossorigin="anonymous",
     )

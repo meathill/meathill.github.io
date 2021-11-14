@@ -5,8 +5,6 @@ import '../styl/screen.styl';
 import $ from 'jquery';
 import Blog from './app/Blog';
 
-const {forEach} = Array.prototype;
-
 let topbar = $('#top-bar');
 const points = [...document.querySelectorAll('body > div[id]')].map(item => {
   return item.getBoundingClientRect().top;
@@ -26,7 +24,7 @@ window.addEventListener('scroll', function () {
 // way points
 
 // blog
-const blog = new Blog({
+new Blog({
   el: '#blog-grid'
 });
 
