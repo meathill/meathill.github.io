@@ -84,7 +84,7 @@ export default class Blog {
       return;
     }
     list = list.map(item => {
-      item.thumbnail = item.thumbnail ? item.thumbnail.replace('//blog.meathill.com/', '//qiniu.meathill.com') : '';
+      item.thumbnail = item.thumbnail ? item.thumbnail.replace('//blog.meathill.com/', '//static.meathill.com') : '';
       return item;
     });
     localStorage.setItem(KEY, store);
