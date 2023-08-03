@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   animate.css:
     specifier: ^4.1.1
@@ -3405,15 +3409,15 @@ packages:
     resolution: {integrity: sha1-nbe1lJatPzz+8wp1FC0tkwrXJlE=}
     dev: true
 
-  /json5@1.0.1:
-    resolution: {integrity: sha1-d5+wAYYE+oVOrL9iUhgNg1Q+Pb4=}
+  /json5@1.0.2:
+    resolution: {integrity: sha512-g1MWMLBiz8FKi1e4w0UyVL3w+iJceWAFBAaBnnGKOpNa5f8TLktkbre1+s6oICydWAm+HRUGTmI+//xv2hvXYA==}
     hasBin: true
     dependencies:
       minimist: 1.2.5
     dev: true
 
   /json5@2.2.0:
-    resolution: {integrity: sha1-Lf7+cgxrpSXZ69kJlQ8FFTFsiaM=}
+    resolution: {integrity: sha512-f+8cldu7X/y7RAJurMEJmdoKXGB/X550w2Nr3tTbezL6RwEE/iMcm+tZnXeoZtKuOq6ft8+CqzEkrIgx1fPoQA==}
     engines: {node: '>=6'}
     hasBin: true
     dependencies:
@@ -3478,7 +3482,7 @@ packages:
     dependencies:
       big.js: 5.2.2
       emojis-list: 3.0.0
-      json5: 1.0.1
+      json5: 1.0.2
     dev: true
 
   /locate-path@5.0.0:
